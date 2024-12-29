@@ -65,11 +65,17 @@
   }
 }
 
-.tab-link.active {
-  background-color: #00bcd4;
-  color: #fff;
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
+.tab-link {
+  outline: none; /* Rimuove il contorno */
+  -webkit-tap-highlight-color: transparent; /* Rimuove il flash su dispositivi touch */
 }
+
+.tab-link:focus {
+  outline: none; /* Evita che il focus venga visualizzato */
+}
+
+.tab-link:active {
+  background-color: transparent; /* Evita che cambi il colore al clic */
+  transform: none; /* Evita trasformazioni */
+}
+
