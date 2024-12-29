@@ -59,9 +59,17 @@
   background-color: transparent; /* Default */
   cursor: pointer;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .tab-link.active {
   background-color: #00bcd4;
   color: #fff;
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
