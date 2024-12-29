@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useStore } from "../store";
+/* import React, { useState, useRef } from "react";
+ */import { useStore } from "../store";
 import Navbar from "../components/Navbar";
 import "../style/pages/Skills.scss";
 import {
@@ -9,14 +9,14 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState("frontend");
   const { isOpen } = useStore();
+ /*  const [activeTab, setActiveTab] = useState("frontend");
   const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const touchEndX = useRef(0); */
 
   // swiping
 
-  const handleSwipe = () => {
+  /*   const handleSwipe = () => {
     const tabs = ["frontend", "backend", "extra"];
     const currentIndex = tabs.indexOf(activeTab);
 
@@ -40,7 +40,7 @@ export default function Skills() {
   const onTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     handleSwipe();
-  };
+  }; */
 
   // content per tab
 
@@ -151,14 +151,15 @@ export default function Skills() {
                 Frontend Developer
               </h3>
               <h4 className="vertical-timeline-element-subtitle">Remotely</h4>
-              <p>
-                Erbrand srl and Technip
-              </p>
+              <p>Erbrand srl and Technip</p>
             </VerticalTimelineElement>
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: "rgba(3, 169, 244, 0.1)", color: "#fff" }}
+              contentStyle={{
+                background: "rgba(3, 169, 244, 0.1)",
+                color: "#fff",
+              }}
               date="2010 - 2011"
               iconStyle={{ background: "#03a9f4", color: "#fff" }}
               position="right" // A destra
@@ -175,7 +176,10 @@ export default function Skills() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: "rgba(3, 169, 244, 0.1)", color: "#fff" }}
+              contentStyle={{
+                background: "rgba(3, 169, 244, 0.1)",
+                color: "#fff",
+              }}
               date="2008 - 2010"
               iconStyle={{ background: "#03a9f4", color: "#fff" }}
               position="left" // A sinistra
@@ -189,7 +193,10 @@ export default function Skills() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--work"
-              contentStyle={{ background: "rgba(3, 169, 244, 0.1)", color: "#fff" }}
+              contentStyle={{
+                background: "rgba(3, 169, 244, 0.1)",
+                color: "#fff",
+              }}
               date="2006 - 2008"
               iconStyle={{ background: "#03a9f4", color: "#fff" }}
               position="right" // A destra
@@ -203,7 +210,10 @@ export default function Skills() {
 
             <VerticalTimelineElement
               className="vertical-timeline-element--education"
-              contentStyle={{ background: "rgba(3, 169, 244, 0.1)", color: "#fff" }}
+              contentStyle={{
+                background: "rgba(3, 169, 244, 0.1)",
+                color: "#fff",
+              }}
               date="April 2013"
               iconStyle={{ background: "#03a9f4", color: "#fff" }}
               position="left" // A sinistra
