@@ -1,7 +1,6 @@
 import React from "react";
 import "../style/navbar.scss";
 import image from "../images/copia.jpg";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import { useStore } from "../store";

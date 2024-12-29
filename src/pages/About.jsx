@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Navbar from "../components/Navbar";
 import "../style/pages/About.scss";
 import "../style/Tabs.scss";
