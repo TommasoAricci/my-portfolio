@@ -8,8 +8,7 @@ import jsImg from "../images/tokens/javascript.png";
 import reactImg from "../images/tokens/react.png";
 import nodeImg from "../images/tokens/nodejs.png";
 import mongoImg from "../images/tokens/mongodb.png";
-import psImg from "../images/tokens/ps.png";
-import aiImg from "../images/tokens/ai.png";
+import adIMG from "../images/tokens/adobe.png";
 import git from "../images/tokens/git.png";
 import copyImg from "../images/tokens/copywriting.png";
 import wpImg from "../images/tokens/wordpress.png";
@@ -113,20 +112,16 @@ export default function Skills() {
                 <span>WORDPRESS</span>
               </div>
               <div className="skill-badge">
-                <img src={psImg} alt="PHOTOSHOP logo" />
-                <span>PHOTOSHOP</span>
-              </div>
-              <div className="skill-badge">
-                <img src={aiImg} alt="ILLUSTRATOR logo" />
-                <span>ILLUSTRATOR</span>
+                <img src={adIMG} alt="ADOBE logo" />
+                <span>ADOBE</span>
               </div>
               <div className="skill-badge">
                 <img src={blImg} alt="BLENDER logo" />
-                <span>BLENDER (basic)</span>
+                <span>BLENDER</span>
               </div>
               <div className="skill-badge">
                 <img src={copyImg} alt="COPYWRITING logo" />
-                <span>COPYWRITING & SEO</span>
+                <span>SEO WRITING</span>
               </div>
             </div>
           </>
@@ -178,7 +173,7 @@ export default function Skills() {
             </div>
           </div>
         </>
-      ): null}
+      ) : null}
     </>
   );
 }

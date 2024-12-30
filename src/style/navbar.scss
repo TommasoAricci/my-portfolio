@@ -72,7 +72,7 @@ $accent-color: #6200ea; // Purple accent color
   position: fixed !important;
   top: 35px;
   right: 20px;
-  background-color: darken($bg-color, 5%); // Matches nav item background
+  background-color: $secondary-color; // Matches nav item background
   color: $text-color;
   border: none;
   border-radius: 5px;
@@ -80,14 +80,7 @@ $accent-color: #6200ea; // Purple accent color
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.6);
   transition: all 0.1s ease-in-out;
   z-index: 9999;
-
-  &:hover {
-    background-color: $secondary-color; // Cyan background on hover
-    color: #fff; // White text on hover
-    transform: scale(1.1);
-  }
 }
-
 
 //laptop
 
