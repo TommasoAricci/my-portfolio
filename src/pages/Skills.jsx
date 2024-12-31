@@ -1,5 +1,4 @@
-import React, { useState, useRef, useMemo } from "react";
-import { useStore } from "../store";
+import React, { useState, useMemo } from "react";
 import Navbar from "../components/Navbar";
 import "../style/pages/Skills.scss";
 import htmlImg from "../images/tokens/html.png";
@@ -19,9 +18,9 @@ import exImg from "../images/tokens/ex.png";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("frontend");
-  const { isOpen } = useStore();
+/*   const { isOpen } = useStore();
   const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const touchEndX = useRef(0); */
 
   // swiping
   /* 
