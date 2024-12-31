@@ -1,12 +1,11 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import "../style/pages/About.scss";
 import "../style/Tabs.scss";
-import { useStore } from "../store";
 
 export default function AboutMe() {
   const [activeTab, setActiveTab] = useState("about");
-  const { isOpen } = useStore();
+/*   const { isOpen } = useStore();
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -36,7 +35,7 @@ export default function AboutMe() {
   const onTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     handleSwipe();
-  };
+  }; */
 
   const renderTabContent = () => {
     switch (activeTab) {
@@ -87,8 +86,8 @@ export default function AboutMe() {
       <>
         <div
           className="mainAbout"
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd}
+/*           onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd} */
         >
           <div id="aboutTitle">
             <h1>About me</h1>
