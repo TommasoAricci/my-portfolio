@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { useStore } from "../store";
 import Navbar from "../components/Navbar";
 import "../style/pages/Skills.scss";
@@ -13,6 +13,9 @@ import git from "../images/tokens/git.png";
 import copyImg from "../images/tokens/copywriting.png";
 import wpImg from "../images/tokens/wordpress.png";
 import blImg from "../images/tokens/blender.png";
+import btImg from "../images/tokens/boot.png";
+import sassImg from "../images/tokens/sass.png";
+import exImg from "../images/tokens/ex.png";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("frontend");
@@ -21,7 +24,7 @@ export default function Skills() {
   const touchEndX = useRef(0);
 
   // swiping
-
+  /* 
   const handleSwipe = () => {
     const tabs = ["frontend", "backend", "extra"];
     const currentIndex = tabs.indexOf(activeTab);
@@ -46,34 +49,39 @@ export default function Skills() {
   const onTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     handleSwipe();
-  };
+  }; */
 
   // content per tab
 
-  const renderTabContent = () => {
+  const renderTabContent = useMemo(() => {
     switch (activeTab) {
       case "frontend":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>Skills</h1>
-            </div>
             <div className="skills-container">
               <div className="skill-badge">
                 <img src={htmlImg} alt="HTML Logo" />
                 <span>HTML</span>
+                <div className="skill-badge">
+                <img src={btImg} alt="Bootstrap Logo" />
+                <span>Bootstrap</span>
+              </div>
               </div>
               <div className="skill-badge">
                 <img src={cssImg} alt="CSS Logo" />
                 <span>CSS</span>
+                <div className="skill-badge">
+                <img src={sassImg} alt="Sass Logo" />
+                <span>Sass</span>
+              </div>
               </div>
               <div className="skill-badge">
                 <img src={jsImg} alt="JavaScript Logo" />
                 <span>JavaScript</span>
-              </div>
-              <div className="skill-badge">
+                <div className="skill-badge">
                 <img src={reactImg} alt="React Logo" />
                 <span>React</span>
+              </div>
               </div>
             </div>
           </>
@@ -81,13 +89,14 @@ export default function Skills() {
       case "backend":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>Skills</h1>
-            </div>
             <div className="skills-container">
               <div className="skill-badge">
                 <img src={nodeImg} alt="NODE logo" />
                 <span>NODEJS</span>
+                <div className="skill-badge">
+                  <img src={exImg} alt="Express Logo" />
+                  <span>Express</span>
+                </div>
               </div>
               <div className="skill-badge">
                 <img src={mongoImg} alt="MONGO logo" />
@@ -99,9 +108,6 @@ export default function Skills() {
       case "extra":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>Skills</h1>
-            </div>
             <div className="skills-container">
               <div className="skill-badge">
                 <img src={git} alt="GIT logo" />
@@ -129,51 +135,48 @@ export default function Skills() {
       default:
         return null;
     }
-  };
+  }, [activeTab]);
 
   // rendering elements
 
   return (
     <>
       <Navbar />
-      {!isOpen ? (
-        <>
-          <div
-            className="mainAbout mainSkills"
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          >
-            {renderTabContent()}
+      <>
+        <div
+          className="mainAbout mainSkills"
+          /*             onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd} */
+        >
+          <div id="aboutTitle">
+            <h1>Skills</h1>
           </div>
+          {renderTabContent}
+        </div>
 
-          <div className="tabs-container">
-            <div className="tabs">
-              <button
-                className={`tab-link ${
-                  activeTab === "frontend" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("frontend")}
-              >
-                Frontend
-              </button>
-              <button
-                className={`tab-link ${
-                  activeTab === "backend" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("backend")}
-              >
-                Backend
-              </button>
-              <button
-                className={`tab-link ${activeTab === "extra" ? "active" : ""}`}
-                onClick={() => setActiveTab("extra")}
-              >
-                Extra
-              </button>
-            </div>
+        <div className="tabs-container">
+          <div className="tabs">
+            <button
+              className={`tab-link ${activeTab === "frontend" ? "active" : ""}`}
+              onClick={() => setActiveTab("frontend")}
+            >
+              Frontend
+            </button>
+            <button
+              className={`tab-link ${activeTab === "backend" ? "active" : ""}`}
+              onClick={() => setActiveTab("backend")}
+            >
+              Backend
+            </button>
+            <button
+              className={`tab-link ${activeTab === "extra" ? "active" : ""}`}
+              onClick={() => setActiveTab("extra")}
+            >
+              Extra
+            </button>
           </div>
-        </>
-      ) : null}
+        </div>
+      </>
     </>
   );
 }

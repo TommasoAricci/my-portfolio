@@ -1,0 +1,16 @@
+.vertical-timeline-element-content .vertical-timeline-element-date {
+    float: none;
+}
+
+.vertical-timeline-element-title{
+    text-transform: uppercase ! important;
+}
+
+.infoIcon{
+    position: absolute;
+    top: 4px;
+    right: 8%;
+    transform: translateX(50%);
+    font-size: 30px;
+    cursor: pointer;
+}

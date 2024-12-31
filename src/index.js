@@ -21,7 +21,11 @@ const router = createBrowserRouter([
   {
     path: "/work",
     element: <Work />,
-  }
+  },
+  {
+    path: "/experience",
+    element: <Work />,
+  },
 ]);
 
 // Componente per gestire le animazioni per ogni pagina

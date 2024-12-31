@@ -10,21 +10,19 @@ export default function AboutMe() {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // swiping
-
+  // Swiping
   const handleSwipe = () => {
     const tabs = ["about", "info", "contacts"];
     const currentIndex = tabs.indexOf(activeTab);
 
     // Swipe a sinistra
-
     if (touchStartX.current - touchEndX.current > 50) {
       if (currentIndex < tabs.length - 1) {
         setActiveTab(tabs[currentIndex + 1]);
       }
-
-      // Swipe a destra
-    } else if (touchEndX.current - touchStartX.current > 50) {
+    }
+    // Swipe a destra
+    else if (touchEndX.current - touchStartX.current > 50) {
       if (currentIndex > 0) {
         setActiveTab(tabs[currentIndex - 1]);
       }
@@ -34,21 +32,17 @@ export default function AboutMe() {
   const onTouchStart = (e) => {
     touchStartX.current = e.changedTouches[0].clientX;
   };
+
   const onTouchEnd = (e) => {
     touchEndX.current = e.changedTouches[0].clientX;
     handleSwipe();
   };
-
-  // content per tab
 
   const renderTabContent = () => {
     switch (activeTab) {
       case "about":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>About me</h1>
-            </div>
             <div className="aboutDescription">
               <h2>Chi sono?</h2>
               <p>
@@ -67,9 +61,6 @@ export default function AboutMe() {
       case "info":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>About me</h1>
-            </div>
             <div className="aboutDescription">
               <h2>Info</h2>
               <p>Descrizione del tab "about".</p>
@@ -79,9 +70,6 @@ export default function AboutMe() {
       case "contacts":
         return (
           <>
-            <div id="aboutTitle">
-              <h1>About me</h1>
-            </div>
             <div className="aboutDescription">
               <h2>Contacts</h2>
               <p>Descrizione del tab "about".</p>
@@ -93,46 +81,43 @@ export default function AboutMe() {
     }
   };
 
-  // rendering elements
-
   return (
     <>
       <Navbar />
-      {!isOpen ? (
-        <>
-          <div
-            className="mainAbout"
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          >
-            {renderTabContent()}
+      <>
+        <div
+          className="mainAbout"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          <div id="aboutTitle">
+            <h1>About me</h1>
           </div>
-          <div className="tabs-container">
-            <div className="tabs">
-              <button
-                className={`tab-link ${activeTab === "about" ? "active" : ""}`}
-                onClick={() => setActiveTab("about")}
-              >
-                About
-              </button>
-              <button
-                className={`tab-link ${activeTab === "info" ? "active" : ""}`}
-                onClick={() => setActiveTab("info")}
-              >
-                Info
-              </button>
-              <button
-                className={`tab-link ${
-                  activeTab === "contacts" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("contacts")}
-              >
-                Contacts
-              </button>
-            </div>
+          {renderTabContent()}
+        </div>
+        <div className="tabs-container">
+          <div className="tabs">
+            <button
+              className={`tab-link ${activeTab === "about" ? "active" : ""}`}
+              onClick={() => setActiveTab("about")}
+            >
+              About
+            </button>
+            <button
+              className={`tab-link ${activeTab === "info" ? "active" : ""}`}
+              onClick={() => setActiveTab("info")}
+            >
+              Info
+            </button>
+            <button
+              className={`tab-link ${activeTab === "contacts" ? "active" : ""}`}
+              onClick={() => setActiveTab("contacts")}
+            >
+              Contacts
+            </button>
           </div>
-        </>
-      ): null}
+        </div>
+      </>
     </>
   );
 }
