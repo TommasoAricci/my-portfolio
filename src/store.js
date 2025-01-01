@@ -1,22 +1,17 @@
-import { createContext, useContext, useState } from "react";
-import React from "react";
-
-// creazione
+import { createContext, useContext, useState, useCallback } from "react";
 
 export const StoreContext = createContext();
-
-// hook per usarlo
 
 export const useStore = () => {
   return useContext(StoreContext);
 };
 
-// provider
-
 export const StoreProvider = ({ children }) => {
+  const [isOpen, setIsOpenState] = useState(false);
 
-  // navbar
-  const [isOpen, setIsOpen] = useState(false);
+  const setIsOpen = useCallback((state) => {
+    setIsOpenState(state);
+  }, []); // Funzione stabile
 
   return (
     <StoreContext.Provider value={{ isOpen, setIsOpen }}>

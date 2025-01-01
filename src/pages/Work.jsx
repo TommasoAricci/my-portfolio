@@ -65,9 +65,9 @@ export default function Skills() {
                   Frontend Developer
                 </h3>
                 <p>Erbrand srl and Technip</p>
-                <div className="infoIcon">
+{/*                 <div className="infoIcon">
                   <FontAwesomeIcon icon={faCircleInfo} />
-                </div>
+                </div> */}
               </VerticalTimelineElement>
 
               <VerticalTimelineElement
