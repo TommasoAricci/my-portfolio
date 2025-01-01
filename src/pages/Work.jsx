@@ -7,8 +7,8 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import "../style/pages/Work.scss";
 import "../style/pages/About.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"; */
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("works");
