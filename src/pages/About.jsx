@@ -1,42 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import "../style/pages/About.scss";
 import "../style/Tabs.scss";
 
 export default function AboutMe() {
   const [activeTab, setActiveTab] = useState("about");
-/*   const { isOpen } = useStore();
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
-
-  // Swiping
-  const handleSwipe = () => {
-    const tabs = ["about", "info", "contacts"];
-    const currentIndex = tabs.indexOf(activeTab);
-
-    // Swipe a sinistra
-    if (touchStartX.current - touchEndX.current > 50) {
-      if (currentIndex < tabs.length - 1) {
-        setActiveTab(tabs[currentIndex + 1]);
-      }
-    }
-    // Swipe a destra
-    else if (touchEndX.current - touchStartX.current > 50) {
-      if (currentIndex > 0) {
-        setActiveTab(tabs[currentIndex - 1]);
-      }
-    }
-  };
-
-  const onTouchStart = (e) => {
-    touchStartX.current = e.changedTouches[0].clientX;
-  };
-
-  const onTouchEnd = (e) => {
-    touchEndX.current = e.changedTouches[0].clientX;
-    handleSwipe();
-  }; */
-
+  
   const renderTabContent = () => {
     switch (activeTab) {
       case "about":
@@ -86,8 +55,6 @@ export default function AboutMe() {
       <>
         <div
           className="mainAbout"
-/*           onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd} */
         >
           <div id="aboutTitle">
             <h1>About me</h1>

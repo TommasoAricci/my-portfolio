@@ -15,10 +15,12 @@ import blImg from "../images/tokens/blender.png";
 import btImg from "../images/tokens/boot.png";
 import sassImg from "../images/tokens/sass.png";
 import exImg from "../images/tokens/ex.png";
+import axImg from "../images/tokens/axios.png";
+import monImg from "../images/tokens/mon.png";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState("frontend");
-/*   const { isOpen } = useStore();
+  /*   const { isOpen } = useStore();
   const touchStartX = useRef(0);
   const touchEndX = useRef(0); */
 
@@ -58,29 +60,44 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
-              <div className="skill-badge">
-                <img src={htmlImg} alt="HTML Logo" />
-                <span>HTML</span>
+              <h3>Languages</h3>
+              <div className="languages">
                 <div className="skill-badge">
-                <img src={btImg} alt="Bootstrap Logo" />
-                <span>Bootstrap</span>
-              </div>
-              </div>
-              <div className="skill-badge">
-                <img src={cssImg} alt="CSS Logo" />
-                <span>CSS</span>
+                  <img src={htmlImg} alt="HTML Logo" />
+                  <span>HTML</span>
+                </div>
                 <div className="skill-badge">
-                <img src={sassImg} alt="Sass Logo" />
-                <span>Sass</span>
-              </div>
-              </div>
-              <div className="skill-badge">
-                <img src={jsImg} alt="JavaScript Logo" />
-                <span>JavaScript</span>
+                  <img src={cssImg} alt="CSS Logo" />
+                  <span>CSS</span>
+                </div>
                 <div className="skill-badge">
-                <img src={reactImg} alt="React Logo" />
-                <span>React</span>
+                  <img src={jsImg} alt="JavaScript Logo" />
+                  <span>JavaScript</span>
+                </div>
               </div>
+
+              <h3>Libraries</h3>
+              <div className="libraries">
+                <div className="skill-badge">
+                  <img src={reactImg} alt="React Logo" />
+                  <span>ReactJS</span>
+                </div>
+                <div className="skill-badge">
+                  <img src={sassImg} alt="Sass Logo" />
+                  <span>Sass</span>
+                </div>
+                <div className="skill-badge">
+                  <img src={btImg} alt="Bootstrap Logo" />
+                  <span>Bootstrap</span>
+                </div>
+                <div className="skill-badge">
+                  <img src={git} alt="Git logo" />
+                  <span>Git</span>
+                </div>
+{/*                 <div className="skill-badge">
+                  <img src={axImg} alt="Axios logo" />
+                  <span>Axios</span>
+                </div> */}
               </div>
             </div>
           </>
@@ -89,17 +106,32 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
+              <h3>Languages</h3>
+              <div className="languages">
+                <div className="skill-badge">
+                  <img src={jsImg} alt="JavaScript Logo" />
+                  <span>JavaScript</span>
+                </div>
+              </div>
+
+              <h3>Libraries - Database</h3>
+              <div className="libraries">
               <div className="skill-badge">
-                <img src={nodeImg} alt="NODE logo" />
-                <span>NODEJS</span>
+                  <img src={nodeImg} alt="Node Logo" />
+                  <span>NodeJS</span>
+                </div>
                 <div className="skill-badge">
                   <img src={exImg} alt="Express Logo" />
                   <span>Express</span>
                 </div>
-              </div>
-              <div className="skill-badge">
-                <img src={mongoImg} alt="MONGO logo" />
-                <span>MONGO DB</span>
+                <div className="skill-badge">
+                  <img src={mongoImg} alt="Mongo logo" />
+                  <span>MONGO DB</span>
+                </div>
+                <div className="skill-badge">
+                  <img src={monImg} alt="Mongoose logo" />
+                  <span>MONGOOSE</span>
+                </div>
               </div>
             </div>
           </>
@@ -108,10 +140,6 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
-              <div className="skill-badge">
-                <img src={git} alt="GIT logo" />
-                <span>GIT</span>
-              </div>
               <div className="skill-badge">
                 <img src={wpImg} alt="WORDPRESS Logo" />
                 <span>WORDPRESS</span>
@@ -142,11 +170,7 @@ export default function Skills() {
     <>
       <Navbar />
       <>
-        <div
-          className="mainAbout mainSkills"
-          /*             onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd} */
-        >
+        <div className="mainAbout mainSkills">
           <div id="aboutTitle">
             <h1>Skills</h1>
           </div>

@@ -46,7 +46,7 @@ $accent-color: #6200ea; // Purple accent color
 
     .navDiv {
       padding: 10px 20px;
-      background-color: rgba(3, 169, 244, 0.1);
+      background-color: #162129;
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
@@ -61,9 +61,14 @@ $accent-color: #6200ea; // Purple accent color
         margin: 0;
       }
     }
+
+    .active {
+      background-color: $secondary-color;
+      color: #fff;
+      transform: scale(1.05);
+    }
   }
 }
-
 
 .mainClose {
   display: none;

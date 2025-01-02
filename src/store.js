@@ -7,14 +7,17 @@ export const useStore = () => {
 };
 
 export const StoreProvider = ({ children }) => {
+
+  // navbar open
+
   const [isOpen, setIsOpenState] = useState(false);
 
   const setIsOpen = useCallback((state) => {
     setIsOpenState(state);
-  }, []); // Funzione stabile
+  }, []);
 
   return (
-    <StoreContext.Provider value={{ isOpen, setIsOpen }}>
+    <StoreContext.Provider value={{ isOpen, setIsOpen}}>
       {children}
     </StoreContext.Provider>
   );
