@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "../style/navbar.scss";
 import image from "../images/copia.jpg";
 import { Link, useLocation } from "react-router-dom"; // Importa useLocation
@@ -7,7 +7,6 @@ import { useStore } from "../store";
 
 export default function Navbar() {
   const { isOpen, setIsOpen } = useStore();
-  const [isActive, setIsActive] = useState(false);
   const location = useLocation();
 
   console.log(isOpen);

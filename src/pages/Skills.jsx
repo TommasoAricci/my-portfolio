@@ -15,7 +15,6 @@ import blImg from "../images/tokens/blender.png";
 import btImg from "../images/tokens/boot.png";
 import sassImg from "../images/tokens/sass.png";
 import exImg from "../images/tokens/ex.png";
-import axImg from "../images/tokens/axios.png";
 import monImg from "../images/tokens/mon.png";
 
 export default function Skills() {
