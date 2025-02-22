@@ -1,21 +1,13 @@
-/* .titleDiv {
-  font-size: 30px;
-  text-align: center;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  #name {
-    color: red;
-    margin: 0;
+#app-h1{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform:none;
+  font-size: 45px;
 
-  }
-
-  #portfolio {
-    color: blue;
-    margin: -10px;
+  span{
+    color: #FFD700;
   }
 }
- */

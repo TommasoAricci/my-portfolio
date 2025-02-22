@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import "../style/pages/About.scss";
 import "../style/Tabs.scss";
+import Tabs from "../components/Tabs";
 
 export default function AboutMe() {
   const [activeTab, setActiveTab] = useState("about");
-  
+
   const renderTabContent = () => {
     switch (activeTab) {
       case "about":
@@ -53,36 +54,21 @@ export default function AboutMe() {
     <>
       <Navbar />
       <>
-        <div
-          className="mainAbout"
-        >
+        <div className="mainAbout">
           <div id="aboutTitle">
             <h1>About me</h1>
           </div>
           {renderTabContent()}
         </div>
-        <div className="tabs-container">
-          <div className="tabs">
-            <button
-              className={`tab-link ${activeTab === "about" ? "active" : ""}`}
-              onClick={() => setActiveTab("about")}
-            >
-              About
-            </button>
-            <button
-              className={`tab-link ${activeTab === "info" ? "active" : ""}`}
-              onClick={() => setActiveTab("info")}
-            >
-              Info
-            </button>
-            <button
-              className={`tab-link ${activeTab === "contacts" ? "active" : ""}`}
-              onClick={() => setActiveTab("contacts")}
-            >
-              Contacts
-            </button>
-          </div>
-        </div>
+
+        <Tabs
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          first="about"
+          second="info"
+          third="contacts"
+        />
+
       </>
     </>
   );

@@ -7,8 +7,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import "../style/pages/Work.scss";
 import "../style/pages/About.scss";
-/* import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons"; */
+import Tabs from "../components/Tabs";
 import { useStore } from "../store";
 
 export default function Skills() {
@@ -29,7 +28,7 @@ export default function Skills() {
             <VerticalTimeline animate={false}>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: "#03a9f4", color: "#fff" }}
+                contentStyle={{ background: "#FFD700", color: "black" }}
                 contentArrowStyle={{
                   borderRight: "7px solid  #03a9f4",
                 }}
@@ -212,24 +211,12 @@ export default function Skills() {
           </div>
           {renderTabContent()}
         </div>
-        <div className="tabs-container">
-          <div className="tabs">
-            <button
-              className={`tab-link ${activeTab === "works" ? "active" : ""}`}
-              onClick={() => setActiveTab("works")}
-            >
-              Works
-            </button>
-            <button
-              className={`tab-link ${
-                activeTab === "education" ? "active" : ""
-              }`}
-              onClick={() => setActiveTab("education")}
-            >
-              Education
-            </button>
-          </div>
-        </div>
+        <Tabs
+          activeTab={activeTab}
+          setActiveTab={setActiveTab}
+          first="works"
+          second="education"
+        />
       </>
     </>
   );

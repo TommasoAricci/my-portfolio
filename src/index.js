@@ -4,14 +4,20 @@ import { createBrowserRouter, RouterProvider, useLocation, Route } from "react-r
 import { StoreProvider } from "./store";
 import { CSSTransition, TransitionGroup } from "react-transition-group"; // Importa la libreria
 import "./style/index.scss";
+import App from "./pages/App";
 import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Work from "./pages/Work";
+import Projects from "./pages/Projects";
 
 // Definisci le rotte
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App />,
+  },
+  {
+    path: "/about",
     element: <About />,
   },
   {
@@ -25,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/experience",
     element: <Work />,
+  },
+  {
+    path: "/projects",
+    element: <Projects />,
   },
 ]);
 

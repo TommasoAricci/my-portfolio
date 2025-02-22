@@ -20,7 +20,7 @@
     gap: 20px;
     padding: 20px;
 
-    .languages, .libraries{
+    .languages, .libraries, .extra, .graphic{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -28,6 +28,11 @@
       align-items: center;
       gap: 20px;
       padding: 20px;
+    }
+
+    #skills-h3{
+      font-size: large;
+      color: #FFD700;
     }
   }
 

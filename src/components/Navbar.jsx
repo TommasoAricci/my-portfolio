@@ -25,8 +25,8 @@ export default function Navbar() {
       <div className={isOpen ? "mainMobile" : "mainClose"}>
         <img className="image" src={image} alt="" width="200px" />
         <nav>
-          <Link to="/" style={linkStyle}>
-            <div className={location.pathname === "/" ? "navDiv active" : "navDiv"}>
+          <Link to="/about" style={linkStyle}>
+            <div className={location.pathname === "/about" ? "navDiv active" : "navDiv"}>
               <h2>About me</h2>
             </div>
           </Link>
@@ -40,9 +40,11 @@ export default function Navbar() {
               <h2>experience</h2>
             </div>
           </Link>
-          <div className="navDiv">
-            <h2>Projects</h2>
-          </div>
+          <Link to="/projects" style={linkStyle}>
+            <div className={location.pathname === "/projects" ? "navDiv active" : "navDiv"}>
+              <h2>Projects</h2>
+            </div>
+          </Link>
           <div className="navDiv">
             <h2>Contacts</h2>
           </div>
