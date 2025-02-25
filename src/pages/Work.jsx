@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import "../style/pages/Work.scss";
-import "../style/pages/About.scss";
-import Tabs from "../components/Tabs";
-import { useStore } from "../store";
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import NavbarTop from '../components/Navbar-Top';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import '../style/pages/Work.scss';
+import '../style/pages/About.scss';
+import Tabs from '../components/Tabs';
+import { useStore } from '../store';
+import Title from '../components/Title';
 
 export default function Skills() {
-  const [activeTab, setActiveTab] = useState("works");
+  const [activeTab, setActiveTab] = useState('works');
   const { setIsOpen } = useStore();
 
   useEffect(() => {
@@ -22,23 +21,21 @@ export default function Skills() {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case "works":
+      case 'works':
         return (
           <>
             <VerticalTimeline animate={false}>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: "#FFD700", color: "black" }}
+                contentStyle={{ background: '#FFD700', color: 'black' }}
                 contentArrowStyle={{
-                  borderRight: "7px solid  #03a9f4",
+                  borderRight: '7px solid  #03a9f4',
                 }}
                 date="2024 - present"
-                iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                iconStyle={{ background: '#03a9f4', color: '#fff' }}
                 position="left" // A sinistra
               >
-                <h3 className="vertical-timeline-element-title">
-                  Frontend Developer
-                </h3>
+                <h3 className="vertical-timeline-element-title">Frontend Developer</h3>
                 <p>Erbrand srl and Technip</p>
                 {/*                 <div className="infoIcon">
                   <FontAwesomeIcon icon={faCircleInfo} />
@@ -48,83 +45,66 @@ export default function Skills() {
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentStyle={{
-                  background: "#162129",
-                  color: "#fff",
+                  background: '#162129',
+                  color: '#fff',
                 }}
                 date="2010 - 2011"
-                iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                iconStyle={{ background: '#03a9f4', color: '#fff' }}
                 position="right" // A destra
               >
-                <h3 className="vertical-timeline-element-title">
-                  Art Director
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  San Francisco, CA
-                </h4>
-                <p>
-                  Creative Direction, User Experience, Visual Design, SEO,
-                  Online Marketing
-                </p>
+                <h3 className="vertical-timeline-element-title">Art Director</h3>
+                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
               </VerticalTimelineElement>
 
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentStyle={{
-                  background: "#162129",
-                  color: "#fff",
+                  background: '#162129',
+                  color: '#fff',
                 }}
                 date="2008 - 2010"
-                iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                iconStyle={{ background: '#03a9f4', color: '#fff' }}
                 position="left" // A sinistra
               >
-                <h3 className="vertical-timeline-element-title">
-                  Web Designer
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  Los Angeles, CA
-                </h4>
+                <h3 className="vertical-timeline-element-title">Web Designer</h3>
+                <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
                 <p>User Experience, Visual Design</p>
               </VerticalTimelineElement>
 
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
                 contentStyle={{
-                  background: "#162129",
-                  color: "#fff",
+                  background: '#162129',
+                  color: '#fff',
                 }}
                 date="2006 - 2008"
-                iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                iconStyle={{ background: '#03a9f4', color: '#fff' }}
                 position="right" // A destra
               >
-                <h3 className="vertical-timeline-element-title">
-                  Web Designer
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  San Francisco, CA
-                </h4>
+                <h3 className="vertical-timeline-element-title">Web Designer</h3>
+                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
                 <p>User Experience, Visual Design</p>
               </VerticalTimelineElement>
             </VerticalTimeline>
           </>
         );
-      case "education":
+      case 'education':
         return (
           <>
             <>
               <VerticalTimeline animate={false}>
                 <VerticalTimelineElement
                   className="vertical-timeline-element--work"
-                  contentStyle={{ background: "#03a9f4", color: "#fff" }}
+                  contentStyle={{ background: '#03a9f4', color: '#fff' }}
                   contentArrowStyle={{
-                    borderRight: "7px solid  #03a9f4",
+                    borderRight: '7px solid  #03a9f4',
                   }}
                   date="2023 - present"
-                  iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="left" // A sinistra
                 >
-                  <h3 className="vertical-timeline-element-title">
-                    Start2Impact School
-                  </h3>
+                  <h3 className="vertical-timeline-element-title">Start2Impact School</h3>
                   <p>Full Stack Developer Course</p>
                   {/*                 <div className="infoIcon">
                   <FontAwesomeIcon icon={faCircleInfo} />
@@ -134,60 +114,45 @@ export default function Skills() {
                 <VerticalTimelineElement
                   className="vertical-timeline-element--work"
                   contentStyle={{
-                    background: "#162129",
-                    color: "#fff",
+                    background: '#162129',
+                    color: '#fff',
                   }}
                   date="2010 - 2011"
-                  iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="right" // A destra
                 >
-                  <h3 className="vertical-timeline-element-title">
-                    Art Director
-                  </h3>
-                  <h4 className="vertical-timeline-element-subtitle">
-                    San Francisco, CA
-                  </h4>
-                  <p>
-                    Creative Direction, User Experience, Visual Design, SEO,
-                    Online Marketing
-                  </p>
+                  <h3 className="vertical-timeline-element-title">Art Director</h3>
+                  <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                  <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                   className="vertical-timeline-element--work"
                   contentStyle={{
-                    background: "#162129",
-                    color: "#fff",
+                    background: '#162129',
+                    color: '#fff',
                   }}
                   date="2008 - 2010"
-                  iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="left" // A sinistra
                 >
-                  <h3 className="vertical-timeline-element-title">
-                    Web Designer
-                  </h3>
-                  <h4 className="vertical-timeline-element-subtitle">
-                    Los Angeles, CA
-                  </h4>
+                  <h3 className="vertical-timeline-element-title">Web Designer</h3>
+                  <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
                   <p>User Experience, Visual Design</p>
                 </VerticalTimelineElement>
 
                 <VerticalTimelineElement
                   className="vertical-timeline-element--work"
                   contentStyle={{
-                    background: "#162129",
-                    color: "#fff",
+                    background: '#162129',
+                    color: '#fff',
                   }}
                   date="2006 - 2008"
-                  iconStyle={{ background: "#03a9f4", color: "#fff" }}
+                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="right" // A destra
                 >
-                  <h3 className="vertical-timeline-element-title">
-                    Web Designer
-                  </h3>
-                  <h4 className="vertical-timeline-element-subtitle">
-                    San Francisco, CA
-                  </h4>
+                  <h3 className="vertical-timeline-element-title">Web Designer</h3>
+                  <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
                   <p>User Experience, Visual Design</p>
                 </VerticalTimelineElement>
               </VerticalTimeline>
@@ -204,20 +169,10 @@ export default function Skills() {
   return (
     <>
       <Navbar />
-      <>
-        <div className="mainAbout mainWork">
-          <div id="aboutTitle">
-            <h1>experience</h1>
-          </div>
-          {renderTabContent()}
-        </div>
-        <Tabs
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-          first="works"
-          second="education"
-        />
-      </>
+      <NavbarTop />
+      <Title title="Esperienza" engTitle="Experience" />
+      <div className=" mainWork"> {renderTabContent()}</div>
+      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} first="works" second="education" />
     </>
   );
 }

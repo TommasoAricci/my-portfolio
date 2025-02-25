@@ -7,17 +7,15 @@ export const useStore = () => {
 };
 
 export const StoreProvider = ({ children }) => {
-
-  // navbar open
-
-  const [isOpen, setIsOpenState] = useState(false);
+  const [isOpen, setIsOpenState] = useState(false); // navbar open
+  const [language, setLanguage] = useState("IT");
 
   const setIsOpen = useCallback((state) => {
     setIsOpenState(state);
   }, []);
 
   return (
-    <StoreContext.Provider value={{ isOpen, setIsOpen}}>
+    <StoreContext.Provider value={{ isOpen, setIsOpen, language, setLanguage }}>
       {children}
     </StoreContext.Provider>
   );

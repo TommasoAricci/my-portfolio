@@ -1,7 +1,12 @@
 import React from "react";
 
-export default function Tabs({ activeTab, setActiveTab, first, second, third }) {
-
+export default function Tabs({
+  activeTab,
+  setActiveTab,
+  first,
+  second,
+  third,
+}) {
   return (
     <div className="tabs-container">
       <div className="tabs">
@@ -15,17 +20,16 @@ export default function Tabs({ activeTab, setActiveTab, first, second, third }) 
           className={`tab-link ${activeTab === second ? "active" : ""}`}
           onClick={() => setActiveTab(second)}
         >
-            {second.toUpperCase()}
+          {second.toUpperCase()}
         </button>
         {third && (
           <button
             className={`tab-link ${activeTab === third ? "active" : ""}`}
             onClick={() => setActiveTab(third)}
           >
-              {third.toUpperCase()}
+            {third.toUpperCase()}
           </button>
         )}
-
       </div>
     </div>
   );

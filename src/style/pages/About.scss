@@ -11,34 +11,145 @@ body {
   color: $text-color;
   line-height: 1.6;
   margin-bottom: 50px;
-  margin-top: 20px;
   align-self: flex-start;
 }
 
 // Main Container
 
-.mainAbout {
-  padding: 2rem;
+.content {
+margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
 
-  h1 {
-    color: $accent-color;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  .contacts {
+    width: 100%;
+
+    .first-div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+
+      .aboutDescription {
+        background: #162129;
+        border-radius: 8px;
+        width: 95%;
+        max-width: 800px;
+        padding: 2rem;
+
+        h2 {
+          color: $text-color;
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+            'Open Sans', 'Helvetica Neue', sans-serif;
+          font-size: 15px;
+          color: $text-color;
+          line-height: 1.7;
+          font-weight: 300;
+        }
+      }
+
+      .info {
+        min-width: 400px;
+        max-width: 450px;
+        padding: 20px;
+        border-radius: 8px;
+
+        .info-to-copy {
+          padding: 10px 15px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          border: 2px solid rgba(0, 0, 0, 0.127);
+
+          span {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #ffd700;
+          }
+
+          .icon {
+            cursor: pointer;
+            transition: color 0.3s;
+            margin-left: 20px;
+
+            &:hover {
+              color: #ffd700;
+            }
+          }
+        }
+      }
+      .badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 30px;
+
+        .github-badge {
+          background-color: #000;
+          padding: 15px;
+          border-radius: 20px;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          text-decoration: none;
+          cursor: pointer;
+
+          .github-icon,
+          .linkedin-icon {
+            margin-right: 8px;
+          }
+
+          &:hover {
+            background-color: #333;
+          }
+        }
+
+        .linkedin-badge {
+          @extend .github-badge;
+          background-color: #0077b5;
+
+          &:hover {
+            background-color: #006699;
+          }
+        }
+      }
+    }
   }
 }
 
-// About Section
+.copied {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
 .aboutDescription {
-  margin: 2rem auto;
   background: #162129;
   border-radius: 8px;
   width: 95%;
   max-width: 800px;
+  padding: 2rem;
 
   h2 {
     color: $text-color;
@@ -48,9 +159,8 @@ body {
   }
 
   p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+      'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     color: $text-color;
     line-height: 1.7;
@@ -58,21 +168,22 @@ body {
   }
 }
 
-// Media Queries
-@media (max-width: 768px) {
-  .mainAbout {
-    padding: 1rem;
+@media only screen and (min-width: 1024px) {
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-    h1 {
-      font-size: 2rem;
+    .contacts {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 80px;
     }
 
-    h3 {
-      font-size: 1rem;
-    }
-
-    .aboutDescription {
-      padding: 1rem;
+    .mainAbout h1 {
+      display: none;
     }
   }
 }

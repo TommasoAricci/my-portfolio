@@ -1,0 +1,63 @@
+$primary-color: #4caf50;
+$button-bg-color: $primary-color;
+$button-hover-bg-color: darken($primary-color, 10%);
+$input-border-color: #ccc;
+$input-focus-border-color: $primary-color;
+
+.contact-form {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #162129;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid $input-border-color;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: $input-focus-border-color;
+    }
+  }
+
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: $button-bg-color;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $button-hover-bg-color;
+    }
+  }
+}

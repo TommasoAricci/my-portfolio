@@ -20,7 +20,11 @@
     gap: 20px;
     padding: 20px;
 
-    .languages, .libraries, .extra, .graphic{
+    .languages,
+    .libraries,
+    .extra,
+    .graphic {
+      max-width: 500px;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -30,9 +34,9 @@
       padding: 20px;
     }
 
-    #skills-h3{
+    #skills-h3 {
       font-size: large;
-      color: #FFD700;
+      color: #ffd700;
     }
   }
 
@@ -61,7 +65,7 @@
 
 .skill-badge span {
   display: inline-block;
-  text-transform: uppercase
+  text-transform: uppercase;
 }
 
 .skill-badge:hover {
@@ -73,4 +77,23 @@
 .skill-badge:active {
   transform: scale(0.95);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-width: 768px) {
+  .mainSkills {
+    .skill-badge {
+      font-size: 1.2rem;
+    }
+  }
+
+  .mainSkills {
+    flex-direction: row;
+  }
+
+  .skills-container {
+    #skills-h3 {
+      font-size: x-large !important;
+      color: #ffd700;
+    }
+  }
 }
