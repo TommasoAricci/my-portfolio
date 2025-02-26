@@ -1,4 +1,4 @@
-export const texts = {
+export const aboutTexts = {
   aboutText: {
     IT: `Mi chiamo Tommaso, sono un ragazzo di 28 anni che ha deciso di diventare un Web Developer nel 2024.
         Sono una persona dinamica, creativa e che non si accontenta del primo risultato. Cerco di andare a fondo nelle cose e di capire come funzionano.
@@ -16,7 +16,9 @@ export const texts = {
     EN: `I decided to pursue a career as a Web Developer because I have always been fascinated by how the internet and web applications work.
         I like the idea of using technologies to create something useful for others by putting my ideas into practice. I also feel inclined to analyze and solve problems.`,
   },
+};
 
+export const projectTexts = {
   Greenway: {
     IT: `Greenway è un applicazione che consente di cercare ricette vegetariane e vegane. Viene utilizzata l'API di Spoonacular.`,
 
@@ -27,4 +29,4 @@ export const texts = {
     IT: `Bookfinder e' un sito di ricerca di libri online. È possibile cercare libri per solamente per genere letterario. Viene usata l'API di Openlibrary.`,
     EN: `Bookfinder is an online book search site. You can search for books by literary genre. It uses the Openlibrary API.`,
   },
-};
+}

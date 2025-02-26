@@ -3,13 +3,12 @@ import Navbar from '../components/Navbar';
 import NavbarTop from '../components/Navbar-Top';
 import Title from '../components/Title';
 import '../style/pages/About.scss';
-import '../style/Tabs.scss';
 import Tabs from '../components/Tabs';
 import { useStore } from '../store';
-import { texts } from '../texts';
+import { aboutTexts } from '../texts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy, faCheck } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faCopy, faCheck, faUser, faEnvelope, faHeart, faPhone, faCircleInfo, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import Form from '../components/Form';
 
 export default function AboutMe() {
@@ -19,31 +18,49 @@ export default function AboutMe() {
   const phone = '+39 3516729510';
   const githubUrl = 'https://github.com/TommasoAricci';
   const linkedinUrl = 'https://www.linkedin.com/in/tommaso-aricci-ba545a11b/';
-  const [copied, setCopied] = useState(false); // Stato per tenere traccia se il testo è stato copiato
+  const [emailCopied, setEmailCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
+  const userIcon = <FontAwesomeIcon icon={faUser} />;
+  const contactsIcon = <FontAwesomeIcon icon={faCircleInfo} />;
+  const emailIcon = <FontAwesomeIcon icon={faEnvelope} />;
+  const phoneIcon = <FontAwesomeIcon icon={faPhone} />;
+  const whatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />;
+  const heartIcon = <FontAwesomeIcon icon={faHeart} />;
+  const rocketIcon = <FontAwesomeIcon icon={faRocket} />;
+  const whatsapp = 'https://wa.me/+61474591535 ';
 
-  const handleCopy = (text) => {
-    navigator.clipboard
-      .writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      })
-      .catch((err) => console.error('Errore nella copia:', err));
+  const handleCopy = (field) => {
+    if (field === 'email') {
+      setEmailCopied(true);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } else if (field === 'phone') {
+      setPhoneCopied(true);
+      setTimeout(() => setPhoneCopied(false), 2000);
+    }
   };
+
+  console.log(phoneCopied);
 
   const renderTabContent = () => {
     switch (activeTab) {
       case 'about':
         return (
           <>
-            <div className="aboutDescription">
-              <h2>{language === 'IT' ? 'Chi è Tommaso?' : 'Who is Tommaso?'}</h2>
-              <p>{texts.aboutText[language]}</p>
-            </div>
+            <div className="aboutMe">
+              <div className="aboutDescription">
+                <h2>{language === 'IT' ? 'Chi è Tommaso?' : 'Who is Tommaso?'}</h2>
+                <p>{aboutTexts.aboutText[language]}</p>
+              </div>
 
-            <div className="aboutDescription">
-              <h2>{language === 'IT' ? 'Perchè Web Developer' : 'Why Web Developer'}</h2>
-              <p>{texts.whyText[language]}</p>
+              <div className="aboutDescription">
+                <h2>{language === 'IT' ? 'Perchè Web Developer' : 'Why Web Developer'}</h2>
+                <p>{aboutTexts.whyText[language]}</p>
+              </div>
+
+              <div className="aboutDescription">
+                <h2>{language === 'IT' ? 'Perchè Web Developer' : 'Why Web Developer'}</h2>
+                <p>{aboutTexts.whyText[language]}</p>
+              </div>
             </div>
           </>
         );
@@ -62,28 +79,41 @@ export default function AboutMe() {
             <div className="contacts">
               <div className="first-div">
                 <div className="aboutDescription info">
-                  <h2 style={{ color: '#ffd700' }}>Info utili</h2>
+                  <h2 style={{ color: '#ffd700' }}>{language === 'IT' ? 'Info utili' : 'Useful Infos'}</h2>
                   <div className="info-to-copy">
                     <p>
-                      <span>Email</span>
+                      <span>{emailIcon}</span>
                       {email}
                     </p>
                     <FontAwesomeIcon
                       className="icon"
-                      icon={faCopy} // Cambia l'icona
-                      onClick={() => handleCopy(email)}
+                      icon={emailCopied ? faCheck : faCopy}
+                      onClick={() => handleCopy('email')}
                     />
                   </div>
                   <div className="info-to-copy">
                     <p>
-                      <span>Phone</span>
+                      <span>{phoneIcon}</span>
                       {phone}
                     </p>
                     <FontAwesomeIcon
                       className="icon"
-                      icon={faCopy} // Cambia l'icona
-                      onClick={() => handleCopy(phone)}
+                      icon={phoneCopied ? faCheck : faCopy}
+                      onClick={() => handleCopy('phone')}
                     />
+                  </div>
+                  <div className="info-to-copy">
+                    <p>
+                      <span>{whatsappIcon}</span>
+                      <a
+                        style={{ marginRight: '10px', fontWeight: 'bold', color: '#ffd700', textDecoration: 'none' }}
+                        href={whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {language === 'IT' ? 'Scrivimi su Whatsapp' : 'Text me on WhatsApp'}
+                      </a>
+                    </p>
                   </div>
                 </div>
                 <div className="badge">
@@ -101,7 +131,6 @@ export default function AboutMe() {
                   </a>
                 </div>
               </div>
-              <Form />
             </div>
           </>
         );
@@ -118,13 +147,22 @@ export default function AboutMe() {
 
       <div className="content">{renderTabContent()}</div>
 
-      {copied && (
-        <div className="copied">
-          <FontAwesomeIcon icon={faCheck} /> Copied!
-        </div>
-      )}
-
-      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} first="about" second="info" third="contacts" />
+      <Tabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        first="about"
+        second="info"
+        third="purpose"
+        four="contacts"
+        firstIcon={userIcon}
+        secondIcon={rocketIcon}
+        thirdIcon={heartIcon}
+        fourIcon={contactsIcon}
+        firstText={language === 'IT' ? 'Info su di me' : 'My info'}
+        secondText={language === 'IT' ? 'Il mio perché' : 'My why'}
+        thirdText={language === 'IT' ? 'Cosa mi appassiona' : 'What I love'}
+        fourText={language === 'IT' ? 'Info utili' : 'Useful Infos'}
+      />
     </>
   );
 }

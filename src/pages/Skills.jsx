@@ -22,10 +22,15 @@ import psImg from '../images/tokens/ps.png';
 import seoImg from '../images/tokens/seo.png';
 import Tabs from '../components/Tabs';
 import { useStore } from '../store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDesktop, faDatabase, faPalette } from '@fortawesome/free-solid-svg-icons';
 
 export default function Skills() {
   const { language } = useStore();
   const [activeTab, setActiveTab] = useState('frontend');
+  const frontend = <FontAwesomeIcon icon={faDesktop} />;
+  const backend = <FontAwesomeIcon icon={faDatabase} />;
+  const extra = <FontAwesomeIcon icon={faPalette} />;
 
   useEffect(() => {
     setActiveTab('frontend');
@@ -41,7 +46,7 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
-              <h3 id="skills-h3">{language === "IT" ? "Linguaggi" : "Languages"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Linguaggi' : 'Languages'}</h3>
               <div className="languages">
                 <div className="skill-badge">
                   <img src={htmlImg} alt="HTML Logo" />
@@ -57,7 +62,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              <h3 id="skills-h3">{language === "IT" ? "Librerie - Strumenti" : "Libraries - Tools"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Librerie - Strumenti' : 'Libraries - Tools'}</h3>
               <div className="libraries">
                 <div className="skill-badge">
                   <img src={reactImg} alt="React Logo" />
@@ -87,7 +92,7 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
-              <h3 id="skills-h3">{language === "IT" ? "Linguaggi" : "Languages"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Linguaggi' : 'Languages'}</h3>
               <div className="languages">
                 <div className="skill-badge">
                   <img src={jsImg} alt="JavaScript Logo" />
@@ -95,7 +100,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              <h3 id="skills-h3">{language === "IT" ? "Librerie - Database" : "Libraries - Database"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Librerie - Database' : 'Libraries - Database'}</h3>
               <div className="libraries">
                 <div className="skill-badge">
                   <img src={nodeImg} alt="Node Logo" />
@@ -121,7 +126,7 @@ export default function Skills() {
         return (
           <>
             <div className="skills-container">
-              <h3 id="skills-h3">{language === "IT" ? "Blog - Scrittura" : "Blog - Writing"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Blog - Scrittura' : 'Blog - Writing'}</h3>
               <div className="extra">
                 <div className="skill-badge">
                   <img src={wpImg} alt="WORDPRESS Logo" />
@@ -137,7 +142,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              <h3 id="skills-h3">{language === "IT" ? "Grafica" : "Graphic"}</h3>
+              <h3 id="skills-h3">{language === 'IT' ? 'Grafica' : 'Graphic'}</h3>
               <div className="graphic">
                 <div className="skill-badge">
                   <img src={psImg} alt="PHOTOSHOP logo" />
@@ -169,7 +174,19 @@ export default function Skills() {
       <Title title="Competenze" engTitle="Skills" />
       <div className="mainSkills">{renderTabContent}</div>
 
-      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} first="frontend" second="backend" third="extra" />
+      <Tabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        first="frontend"
+        second="backend"
+        third="extra"
+        firstIcon={frontend}
+        secondIcon={backend}
+        thirdIcon={extra}
+        firstText={language === 'IT' ? 'Frontend' : 'Frontend'}
+        secondText={language === 'IT' ? 'Backend' : 'Backend'}
+        thirdText={language === 'IT' ? 'Competenze Extra' : 'Extra Skills'}
+      />
     </>
   );
 }

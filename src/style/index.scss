@@ -1,21 +1,24 @@
-
 @font-face {
-  font-family: "JetRegular";
-  src: url("../fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-family: 'JetRegular';
+  src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background: rgb(24, 23, 23);
   letter-spacing: 1px;
-  font-family: "VT323", monospace;
+  font-family: 'VT323', monospace;
+  background-color: #162129;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  align-self: flex-start;
 }
 
 .fade-enter {
@@ -24,7 +27,7 @@ body {
 .fade-enter-active {
   opacity: 1;
   transition: opacity 300ms ease-in-out;
-  background-color: #f00;  // Aggiungi un colore per testare visivamente
+  background-color: #f00; // Aggiungi un colore per testare visivamente
 }
 
 .fade-exit {

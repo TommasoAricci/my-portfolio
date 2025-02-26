@@ -8,10 +8,14 @@ import '../style/pages/About.scss';
 import Tabs from '../components/Tabs';
 import { useStore } from '../store';
 import Title from '../components/Title';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('works');
-  const { setIsOpen } = useStore();
+  const { setIsOpen, language} = useStore();
+  const work = <FontAwesomeIcon icon={faBriefcase} />;
+  const education = <FontAwesomeIcon icon={faGraduationCap} />;
 
   useEffect(() => {
     setIsOpen(false);
@@ -172,7 +176,16 @@ export default function Skills() {
       <NavbarTop />
       <Title title="Esperienza" engTitle="Experience" />
       <div className=" mainWork"> {renderTabContent()}</div>
-      <Tabs activeTab={activeTab} setActiveTab={setActiveTab} first="works" second="education" />
+      <Tabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        first="works"
+        second="education"
+        firstIcon={work}
+        secondIcon={education}
+        firstText={language === 'IT' ? 'Lavoro' : 'Work'}
+        secondText={language === 'IT' ? 'Formazione' : 'Education'}
+      />
     </>
   );
 }

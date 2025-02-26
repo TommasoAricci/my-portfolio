@@ -6,8 +6,14 @@ import '../style/pages/Project-single.scss';
 import Tooltip from '@mui/material/Tooltip';
 
 export default function Project({ src, title, link, git, text }) {
+  const tooltipStyles = {
+    fontSize: '1rem',
+    textAlign: 'center',
+    display: { xs: 'none', md: 'block' }, // Nasconde sotto i 768px
+  };
+
   return (
-    <Tooltip title={text} placement="bottom" arrow slotProps={{ tooltip: { sx: { fontSize: '1rem', textAlign: 'center' } } }}>
+    <Tooltip title={text} placement="bottom" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
       <div className="project-card">
         <img src={src} alt={title} className="project-image" />
         <h3 className="project-title">{title}</h3>

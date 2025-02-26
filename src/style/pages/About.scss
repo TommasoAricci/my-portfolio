@@ -4,20 +4,10 @@ $text-color: #e0e0e0;
 $secondary-color: #03a9f4;
 $accent-color: #6200ea;
 
-// Global Styles
-
-body {
-  background-color: $bg-color;
-  color: $text-color;
-  line-height: 1.6;
-  margin-bottom: 50px;
-  align-self: flex-start;
-}
-
 // Main Container
 
 .content {
-margin: auto;
+  margin: auto;
   width: 80%;
   display: flex;
   flex-direction: column;
@@ -26,6 +16,15 @@ margin: auto;
   text-align: center;
   gap: 20px;
   padding: 20px;
+  margin-bottom: 100px;
+
+  .aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
 
   .contacts {
     width: 100%;
@@ -145,7 +144,7 @@ margin: auto;
 }
 
 .aboutDescription {
-  background: #162129;
+  background: #2E333B;
   border-radius: 8px;
   width: 95%;
   max-width: 800px;
@@ -174,12 +173,17 @@ margin: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-bottom: 0;
 
+    .aboutMe {
+      margin-top: 200px;
+    }
+    
     .contacts {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 80px;
+      gap: 20px;
     }
 
     .mainAbout h1 {

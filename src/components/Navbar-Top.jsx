@@ -3,10 +3,10 @@ import image from '../images/copia.jpg';
 import { Link, useLocation } from 'react-router-dom';
 import { useStore } from '../store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
-  const { language, setLanguage } = useStore();
+  const { language, setLanguage, theme, setTheme } = useStore();
   const location = useLocation();
 
   const linkStyle = {
@@ -16,7 +16,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="mainLaptop">
+      <nav className={theme === 'light' ? 'mainLaptop-light' : 'mainLaptop'}>
+        <div className="fullName">TOMMASO ARICCI</div>
         <Link to="/about" style={linkStyle}>
           <div className={location.pathname === '/about' ? 'navDiv active' : 'navDiv'}>
             <h2>{language === 'IT' ? 'Chi sono' : 'About me'}</h2>
@@ -40,9 +41,14 @@ export default function Navbar() {
         <div className="navDiv">
           <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
         </div>
+        <div className='tools'>
           <button onClick={() => setLanguage(language === 'IT' ? 'EN' : 'IT')} className="translator-laptop">
             <FontAwesomeIcon icon={faGlobe} /> {language}
           </button>
+          <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="translator-laptop">
+            <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+          </button>
+        </div>
       </nav>
     </>
   );

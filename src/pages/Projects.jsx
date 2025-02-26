@@ -6,39 +6,43 @@ import '../style/pages/About.scss';
 import '../style/Tabs.scss';
 import '../style/pages/Projects.scss';
 import Project from '../components/Project';
+import Tabs from '../components/Tabs';
 import greenway from '../images/projects/greenway.png';
 import bookfinder from '../images/projects/bookfinder.png';
 import cafequiz from '../images/projects/cafequiz.png';
 import counter from '../images/projects/counter.png';
-import { texts } from '../texts';
+import interview from '../images/projects/interview.png';
+import copy from '../images/projects/copy.png';
+import { projectTexts } from '../texts';
 import { useStore } from '../store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe, faLink } from '@fortawesome/free-solid-svg-icons';
 
 export default function Projects() {
   const { language } = useStore();
-  const [activeTab, setActiveTab] = useState('about');
+  const [activeTab, setActiveTab] = useState('DEVELOPMENT');
+  const web = <FontAwesomeIcon icon={faGlobe} />;
+  const link = <FontAwesomeIcon icon={faLink} />;
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'about':
+      case 'DEVELOPMENT':
         return (
           <>
             <div className="projects-list">
-              <div>
-                <Project
-                  className="anchor"
-                  src={greenway}
-                  title="Greenway"
-                  link="https://veg-recipes-founder.netlify.app/"
-                  git="https://github.com/TommasoAricci/veg-recipes-founder"
-                  text={texts.Greenway[language]}
-                />
-              </div>
+              <Project
+                src={greenway}
+                title="Greenway"
+                link="https://veg-recipes-founder.netlify.app/"
+                git="https://github.com/TommasoAricci/veg-recipes-founder"
+                text={projectTexts.Greenway[language]}
+              />
               <Project
                 src={bookfinder}
                 title="Bookfinder"
                 link="https://tommasoaricci-bookfinder.netlify.app/"
                 git="https://github.com/TommasoAricci/theBookFinder"
-                text={texts.Bookfinder[language]}
+                text={projectTexts.Bookfinder[language]}
               />
               <Project
                 src={cafequiz}
@@ -55,12 +59,22 @@ export default function Projects() {
             </div>
           </>
         );
-      case 'info':
+      case 'OTHER':
         return (
           <>
-            <div className="aboutDescription">
-              <h2>Info</h2>
-              <p>Descrizione del tab "about".</p>
+            <div className="projects-list">
+              <Project
+                src={copy}
+                title="Copywriting Portfolio"
+                link="https://tommasoaricci.github.io/copy/"
+                git="https://github.com/TommasoAricci/copy"
+              />
+              <Project
+                src={interview}
+                title="Travel Interviews"
+                link="https://tommasoaricci.github.io/interview/"
+                git="https://github.com/TommasoAricci/interview"
+              />
             </div>
           </>
         );
@@ -75,6 +89,16 @@ export default function Projects() {
       <NavbarTop />
       <Title title="Progetti" engTitle="Projects" />
       <div className="projects"> {renderTabContent()}</div>
+      <Tabs
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        first="DEVELOPMENT"
+        second="OTHER"
+        firstIcon={web}
+        secondIcon={link}
+        firstText={language === 'IT' ? 'Sviluppo Web' : 'Web Development'}
+        secondText={language === 'IT' ? 'Altro' : 'Other'}
+      />
     </>
   );
 }

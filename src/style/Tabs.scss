@@ -1,4 +1,3 @@
-
 .tabs-container {
   width: 100%;
   position: fixed;
@@ -12,64 +11,95 @@
   z-index: 9997;
   border-radius: 15px;
   background-color: #121212;
+  padding: 10px;
 }
 
 .tabs {
   display: flex;
   justify-content: space-evenly;
   gap: 8px;
-  background-color: #333;
+  background-color: #222;
   border-radius: 30px;
   width: 80%;
   max-width: 700px;
-  height: 45px;
+  height: 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease-in-out;
   text-wrap: nowrap;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
-.tabs:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Aggiungi un effetto hover sul contenitore */
-}
-
 .tab-link {
   width: 100%;
-  padding: 8px 15px;
+  padding: 10px 20px;
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
   border-radius: 20px;
-  background-color: transparent; /* Default */
+  background-color: #162129;
   cursor: pointer;
   border: none;
-
-  &:focus {
-    outline: none;
-  }
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.active {
+  background-color: #03a9f4;
+}
+
+.tabs-container,
 .tab-link {
-  outline: none; /* Rimuove il contorno */
-  -webkit-tap-highlight-color: transparent; /* Rimuove il flash su dispositivi touch */
+  touch-action: manipulation;
 }
 
-.tab-link:focus {
-  outline: none; /* Evita che il focus venga visualizzato */
+.tabs-container-light {
+  @extend .tabs-container;
+  background-color: #f5f5f5;
+  box-shadow: none;
 }
 
-.tab-link:active {
-  background-color: transparent; /* Evita che cambi il colore al clic */
-  transform: none; /* Evita trasformazioni */
-}
+@media only screen and (min-width: 1024px) {
+  .tabs-container {
+    left: 0;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    transform: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 10px;
+    border-radius: 0;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+    z-index: 0;
+  }
 
-.active{
-  background-color: #03a9f4; /* Cambia il colore di sfondo quando il link è attivo */
-}
+  .tabs {
+    flex-direction: column;
+    height: fit-content;
+    background-color: transparent;
+    margin: 0;
+    box-shadow: none;
+  }
 
-.tabs-container, .tab-link {
-  touch-action: manipulation; /* Rimuove il ritardo */
+  .tab-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-radius: 10px;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .tabs-container-light {
+    .tabs {
+      background-color: #f5f5f5;
+      box-shadow: none;
+    }
+  }
 }

@@ -1,19 +1,22 @@
-import React, { useEffect } from "react";
-import "../style/navbar.scss";
-import image from "../images/copia.jpg";
-import { Link, useLocation } from "react-router-dom";
-import { Squash as Hamburger } from "hamburger-react";
-import { useStore } from "../store";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect } from 'react';
+import '../style/navbar.scss';
+import '../style/pages/lightMode.scss';
+import image from '../images/copia.jpg';
+import { Link, useLocation } from 'react-router-dom';
+import { Squash as Hamburger } from 'hamburger-react';
+import { useStore } from '../store';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
-  const { isOpen, setIsOpen, language, setLanguage } = useStore();
+  const { isOpen, setIsOpen, language, setLanguage, theme, setTheme } = useStore();
   const location = useLocation();
 
+  console.log(theme);
+
   const linkStyle = {
-    textDecoration: "none",
-    color: "inherit",
+    textDecoration: 'none',
+    color: 'inherit',
   };
 
   useEffect(() => {
@@ -22,59 +25,46 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={isOpen ? "mainMobile" : "mainClose"}>
+      <div className={isOpen ? (theme === 'light' ? 'mainMobile-light' : 'mainMobile') : 'mainClose'}>
         <img className="image" src={image} alt="" width="200px" />
+        <div className="fullName">TOMMASO ARICCI</div>
         <nav>
           <Link to="/about" style={linkStyle}>
-            <div
-              className={
-                location.pathname === "/about" ? "navDiv" : "navDiv"
-              }
-            >
-              <h2>{language === "IT" ? "Chi sono" : "About me"}</h2>
+            <div className={location.pathname === '/about' ? 'navDiv' : 'navDiv'}>
+              <h2>{language === 'IT' ? 'Chi sono' : 'About me'}</h2>
             </div>
           </Link>
           <Link to="/skills" style={linkStyle}>
-            <div
-              className={
-                location.pathname === "/skills" ? "navDiv" : "navDiv"
-              }
-            >
-              <h2>{language === "IT" ? "Abilità" : "Skills"}</h2>
+            <div className={location.pathname === '/skills' ? 'navDiv' : 'navDiv'}>
+              <h2>{language === 'IT' ? 'Abilità' : 'Skills'}</h2>
             </div>
           </Link>
           <Link to="/work" style={linkStyle}>
-            <div
-              className={
-                location.pathname === "/work" ? "navDiv" : "navDiv"
-              }
-            >
-              <h2>{language === "IT" ? "Esperienza" : "Experience"}</h2>
+            <div className={location.pathname === '/work' ? 'navDiv' : 'navDiv'}>
+              <h2>{language === 'IT' ? 'Esperienza' : 'Experience'}</h2>
             </div>
           </Link>
           <Link to="/projects" style={linkStyle}>
-            <div
-              className={
-                location.pathname === "/projects" ? "navDiv" : "navDiv"
-              }
-            >
-              <h2>{language === "IT" ? "Progetti" : "Projects"}</h2>
+            <div className={location.pathname === '/projects' ? 'navDiv' : 'navDiv'}>
+              <h2>{language === 'IT' ? 'Progetti' : 'Projects'}</h2>
             </div>
           </Link>
           <div className="navDiv">
-            <h2>{language === "IT" ? "Contatti" : "Contacts"}</h2>
+            <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
           </div>
         </nav>
       </div>
 
       <Hamburger toggled={isOpen} toggle={setIsOpen} />
       {isOpen && (
-        <button
-          onClick={() => setLanguage(language === "IT" ? "EN" : "IT")}
-          className="translator"
-        >
-          <FontAwesomeIcon icon={faGlobe} /> {language}
-        </button>
+        <>
+          <button onClick={() => setLanguage(language === 'IT' ? 'EN' : 'IT')} className="translator">
+            <FontAwesomeIcon icon={faGlobe} /> {language}
+          </button>
+          <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="theme-mobile">
+            <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+          </button>
+        </>
       )}
     </>
   );

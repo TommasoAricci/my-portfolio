@@ -27,11 +27,6 @@ $accent-color: #6200ea; // Purple accent color
     align-self: center;
     border: 2px solid $text-color; // Border matching text color
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px 2px $secondary-color; // Cyan glow on hover
-    }
   }
 
   nav {
@@ -64,9 +59,21 @@ $accent-color: #6200ea; // Purple accent color
 
     .active {
       background-color: $secondary-color;
-      color: #fff;
+      color: #333;
       transform: scale(1.05);
     }
+  }
+}
+
+.mainMobile-light {
+  @extend .mainMobile;
+  background-color: #f5f5f5;
+  color: $bg-color;
+
+  nav .navDiv {
+    background-color: $secondary-color;
+    color: #fff;
+    transform: scale(1.05);
   }
 }
 
@@ -99,14 +106,28 @@ $accent-color: #6200ea; // Purple accent color
   gap: 3px;
 }
 
+.theme-mobile {
+  @extend .translator;
+  top: 168px;
+}
+
 .mainLaptop {
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
+.mainLaptop-light {
+  @extend .mainLaptop;
+}
+
+@media only screen and (min-width: 1024px) {
   .mainMobile,
   .hamburger-react {
     display: none;
+  }
+
+  .tools {
+    display: flex;
+    gap: 10px;
   }
 
   .translator-laptop {
@@ -133,11 +154,12 @@ $accent-color: #6200ea; // Purple accent color
     position: fixed;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 20px;
-    gap: 20px;
     background-color: #121212;
     z-index: 10000;
+    box-shadow: 105px 0 5px 2px rgba(0, 0, 0, 0.8);
 
     .navDiv {
       padding: 5px 10px;
@@ -154,6 +176,7 @@ $accent-color: #6200ea; // Purple accent color
 
       h2 {
         margin: 0;
+        font-size: 1.2rem;
       }
     }
 
@@ -169,4 +192,50 @@ $accent-color: #6200ea; // Purple accent color
       cursor: pointer;
     }
   }
+
+  .mainLaptop-light {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    z-index: 10000;
+    box-shadow: 105px 0 5px 2px rgba(0, 0, 0, 0.8);
+
+    .navDiv {
+      padding: 5px 10px;
+      background-color: #162129;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $secondary-color; // Cyan background on hover
+        color: #fff;
+        transform: scale(1.05);
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+    }
+    .active {
+      background-color: $secondary-color;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .translator {
+      margin-top: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.fullName {
+  color: #ffd700;
 }
