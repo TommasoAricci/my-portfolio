@@ -1,39 +1,62 @@
 import React from 'react';
+import { useMediaQuery } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import '../style/Tabs.scss';
-import { useStore } from '../store';
 
 export default function Tabs(props) {
-  const { theme } = useStore();
+
+  const isLaptop = useMediaQuery('(min-width: 1024px)');
+
   const tooltipStyles = {
-    fontSize: '1rem',
+    fontSize: isLaptop ? '1rem' : '0.8rem',
     textAlign: 'center',
-    display: { xs: 'none', md: 'block' },
+    display: 'block',
+  };
+
+  const tooltipProps = {
+    placement: isLaptop ? 'right' : 'top',
+    arrow: true,
+    disableTouchListener: false,
+    enterTouchDelay: 0,
+    leaveTouchDelay: 3000,
+    slotProps: { tooltip: { sx: tooltipStyles } },
   };
 
   return (
-    <div className={theme === 'light' ? 'tabs-container-light' : 'tabs-container'}>
+    <div className="tabs-container">
       <div className="tabs">
-        <Tooltip title={props.firstText} placement="right" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
-          <button className={`tab-link ${props.activeTab === props.first ? 'active' : ''}`} onClick={() => props.setActiveTab(props.first)}>
+        <Tooltip title={props.firstText} {...tooltipProps}>
+          <button
+            className={`tab-link ${props.activeTab === props.first ? 'active' : ''}`}
+            onClick={() => props.setActiveTab(props.first)}
+          >
             {props.firstIcon}
           </button>
         </Tooltip>
-        <Tooltip title={props.secondText} placement="right" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
-          <button className={`tab-link ${props.activeTab === props.second ? 'active' : ''}`} onClick={() => props.setActiveTab(props.second)}>
+        <Tooltip title={props.secondText} {...tooltipProps}>
+          <button
+            className={`tab-link ${props.activeTab === props.second ? 'active' : ''}`}
+            onClick={() => props.setActiveTab(props.second)}
+          >
             {props.secondIcon}
           </button>
         </Tooltip>
         {props.third && (
-          <Tooltip title={props.thirdText} placement="right" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
-            <button className={`tab-link ${props.activeTab === props.third ? 'active' : ''}`} onClick={() => props.setActiveTab(props.third)}>
+          <Tooltip title={props.thirdText} {...tooltipProps}>
+            <button
+              className={`tab-link ${props.activeTab === props.third ? 'active' : ''}`}
+              onClick={() => props.setActiveTab(props.third)}
+            >
               {props.thirdIcon}
             </button>
           </Tooltip>
         )}
         {props.four && (
-          <Tooltip title={props.fourText} placement="right" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
-            <button className={`tab-link ${props.activeTab === props.four ? 'active' : ''}`} onClick={() => props.setActiveTab(props.four)}>
+          <Tooltip title={props.fourText} {...tooltipProps}>
+            <button
+              className={`tab-link ${props.activeTab === props.four ? 'active' : ''}`}
+              onClick={() => props.setActiveTab(props.four)}
+            >
               {props.fourIcon}
             </button>
           </Tooltip>

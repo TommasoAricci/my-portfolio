@@ -7,9 +7,9 @@ export const useStore = () => {
 };
 
 export const StoreProvider = ({ children }) => {
-  const [isOpen, setIsOpenState] = useState(false); // navbar open
-  const [language, setLanguage] = useState('IT');
-  const [theme, setTheme] = useState('light');
+  const [isOpen, setIsOpenState] = useState(false);
+  const [language, setLanguage] = useState('EN');
+  const [theme, setTheme] = useState('dark');
 
   const setIsOpen = useCallback((state) => {
     setIsOpenState(state);

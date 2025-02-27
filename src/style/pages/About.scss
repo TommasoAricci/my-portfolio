@@ -15,8 +15,7 @@ $accent-color: #6200ea;
   justify-content: center;
   text-align: center;
   gap: 20px;
-  padding: 20px;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 
   .aboutMe {
     display: flex;
@@ -167,6 +166,19 @@ $accent-color: #6200ea;
   }
 }
 
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  img{
+    width: 100px;
+    border-radius: 10%;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .content {
     position: absolute;
@@ -174,10 +186,6 @@ $accent-color: #6200ea;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-bottom: 0;
-
-    .aboutMe {
-      margin-top: 200px;
-    }
     
     .contacts {
       display: flex;
@@ -188,6 +196,19 @@ $accent-color: #6200ea;
 
     .mainAbout h1 {
       display: none;
+    }
+
+    .profile{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    
+      img{
+        width: 200px;
+        border-radius: 10%;
+      }
     }
   }
 }

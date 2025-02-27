@@ -13,7 +13,7 @@ import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('works');
-  const { setIsOpen, language} = useStore();
+  const { setIsOpen, language } = useStore();
   const work = <FontAwesomeIcon icon={faBriefcase} />;
   const education = <FontAwesomeIcon icon={faGraduationCap} />;
 
@@ -31,19 +31,20 @@ export default function Skills() {
             <VerticalTimeline animate={false}>
               <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: '#FFD700', color: 'black' }}
+                contentStyle={{
+                  background: '#FFD700',
+                  color: 'black',
+                }}
                 contentArrowStyle={{
                   borderRight: '7px solid  #03a9f4',
                 }}
                 date="2024 - present"
+                dateClassName="custom-date"
                 iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                position="left" // A sinistra
+                position="left"
               >
                 <h3 className="vertical-timeline-element-title">Frontend Developer</h3>
                 <p>Erbrand srl and Technip</p>
-                {/*                 <div className="infoIcon">
-                  <FontAwesomeIcon icon={faCircleInfo} />
-                </div> */}
               </VerticalTimelineElement>
 
               <VerticalTimelineElement
@@ -52,13 +53,13 @@ export default function Skills() {
                   background: '#162129',
                   color: '#fff',
                 }}
-                date="2010 - 2011"
+                date="2020 - 2024"
+                dateClassName="custom-date"
                 iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                position="right" // A destra
+                position="right"
               >
-                <h3 className="vertical-timeline-element-title">Art Director</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
+                <h3 className="vertical-timeline-element-title">Blogger and Copywriter</h3>
+                <p>{language === 'IT' ? '' : 'Web Designer'}</p>
               </VerticalTimelineElement>
 
               <VerticalTimelineElement
@@ -68,26 +69,12 @@ export default function Skills() {
                   color: '#fff',
                 }}
                 date="2008 - 2010"
+                dateClassName="custom-date"
                 iconStyle={{ background: '#03a9f4', color: '#fff' }}
                 position="left" // A sinistra
               >
                 <h3 className="vertical-timeline-element-title">Web Designer</h3>
                 <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                <p>User Experience, Visual Design</p>
-              </VerticalTimelineElement>
-
-              <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: '#162129',
-                  color: '#fff',
-                }}
-                date="2006 - 2008"
-                iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                position="right" // A destra
-              >
-                <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
                 <p>User Experience, Visual Design</p>
               </VerticalTimelineElement>
             </VerticalTimeline>
@@ -105,6 +92,7 @@ export default function Skills() {
                     borderRight: '7px solid  #03a9f4',
                   }}
                   date="2023 - present"
+                  dateClassName="custom-date"
                   iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="left" // A sinistra
                 >
@@ -122,6 +110,7 @@ export default function Skills() {
                     color: '#fff',
                   }}
                   date="2010 - 2011"
+                  dateClassName="custom-date"
                   iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="right" // A destra
                 >
@@ -137,6 +126,7 @@ export default function Skills() {
                     color: '#fff',
                   }}
                   date="2008 - 2010"
+                  dateClassName="custom-date"
                   iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="left" // A sinistra
                 >
@@ -152,6 +142,7 @@ export default function Skills() {
                     color: '#fff',
                   }}
                   date="2006 - 2008"
+                  dateClassName="custom-date"
                   iconStyle={{ background: '#03a9f4', color: '#fff' }}
                   position="right" // A destra
                 >

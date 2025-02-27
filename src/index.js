@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, useLocation, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { StoreProvider } from './store';
 import './style/index.scss';
-import App from './pages/App';
 import About from './pages/About';
 import Skills from './pages/Skills';
 import Work from './pages/Work';
 import Projects from './pages/Projects';
+import './style/pages/lightMode.scss';
 
 // Definisci le rotte
 const router = createBrowserRouter([

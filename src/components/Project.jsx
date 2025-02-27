@@ -4,16 +4,32 @@ import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import '../style/pages/Project-single.scss';
 import Tooltip from '@mui/material/Tooltip';
+import { useMediaQuery } from '@mui/material';
 
 export default function Project({ src, title, link, git, text }) {
+
+  const isLaptop = useMediaQuery('(min-width: 1024px)');
+
   const tooltipStyles = {
     fontSize: '1rem',
     textAlign: 'center',
-    display: { xs: 'none', md: 'block' }, // Nasconde sotto i 768px
+    display: 'block',
+  };
+
+  const tooltipProps = {
+    placement: isLaptop ? 'right' : 'bottom',
+    arrow: true,
+    disableTouchListener: false,
+    enterTouchDelay: 0,
+    leaveTouchDelay: 3000,
+    slotProps: { tooltip: { sx: tooltipStyles } },
   };
 
   return (
-    <Tooltip title={text} placement="bottom" arrow slotProps={{ tooltip: { sx: tooltipStyles } }}>
+    <Tooltip
+      title={text}
+      {...tooltipProps}
+    >
       <div className="project-card">
         <img src={src} alt={title} className="project-image" />
         <h3 className="project-title">{title}</h3>

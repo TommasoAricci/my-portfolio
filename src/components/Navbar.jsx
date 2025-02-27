@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import '../style/navbar.scss';
-import '../style/pages/lightMode.scss';
 import image from '../images/copia.jpg';
 import { Link, useLocation } from 'react-router-dom';
 import { Squash as Hamburger } from 'hamburger-react';
@@ -12,7 +11,7 @@ export default function Navbar() {
   const { isOpen, setIsOpen, language, setLanguage, theme, setTheme } = useStore();
   const location = useLocation();
 
-  console.log(theme);
+  document.documentElement.setAttribute('data-theme', theme ? 'light' : 'dark');
 
   const linkStyle = {
     textDecoration: 'none',
@@ -58,11 +57,11 @@ export default function Navbar() {
       <Hamburger toggled={isOpen} toggle={setIsOpen} />
       {isOpen && (
         <>
-          <button onClick={() => setLanguage(language === 'IT' ? 'EN' : 'IT')} className="translator">
-            <FontAwesomeIcon icon={faGlobe} /> {language}
+          <button onClick={() => setLanguage(language === 'EN' ? 'IT' : 'EN')} className="translator">
+            <FontAwesomeIcon icon={faGlobe} /> {language === 'EN' ? 'IT' : 'EN'}
           </button>
           <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="theme-mobile">
-            <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} />
+            <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
           </button>
         </>
       )}
