@@ -18,11 +18,9 @@ import {
   faEnvelope,
   faHeart,
   faPhone,
-  faCircleInfo,
   faRocket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Form from '../components/Form';
 
 export default function AboutMe() {
   const { language } = useStore();
@@ -34,7 +32,6 @@ export default function AboutMe() {
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
   const userIcon = <FontAwesomeIcon icon={faUser} />;
-  const contactsIcon = <FontAwesomeIcon icon={faCircleInfo} />;
   const emailIcon = <FontAwesomeIcon icon={faEnvelope} />;
   const phoneIcon = <FontAwesomeIcon icon={faPhone} />;
   const whatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />;
@@ -98,6 +95,65 @@ export default function AboutMe() {
             </div>
           </>
         );
+      case 'contacts':
+        return (
+          <div className="contacts">
+            <div className="first-div">
+              <div className="aboutDescription info">
+                <h2 style={{ color: '#ffd700' }}>{language === 'IT' ? 'Info utili' : 'Useful Infos'}</h2>
+                <div className="info-to-copy">
+                  <p>
+                    <span>{emailIcon}</span>
+                    {email}
+                  </p>
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={emailCopied ? faCheck : faCopy}
+                    onClick={() => handleCopy('email')}
+                  />
+                </div>
+                <div className="info-to-copy">
+                  <p>
+                    <span>{phoneIcon}</span>
+                    {phone}
+                  </p>
+                  <FontAwesomeIcon
+                    className="icon"
+                    icon={phoneCopied ? faCheck : faCopy}
+                    onClick={() => handleCopy('phone')}
+                  />
+                </div>
+                <div className="info-to-copy">
+                  <p>
+                    <span>{whatsappIcon}</span>
+                    <a
+                      style={{ marginRight: '10px', fontWeight: 'bold', color: '#ffd700', textDecoration: 'none' }}
+                      href={whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {language === 'IT' ? 'Scrivimi su Whatsapp' : 'Text me on WhatsApp'}
+                    </a>
+                  </p>
+                </div>
+              </div>
+              <div className="badge">
+                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                  <button className="github-badge">
+                    <FontAwesomeIcon icon={faGithub} className="github-icon" />
+                    <span>GitHub</span>
+                  </button>
+                </a>
+                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+                  <button className="linkedin-badge">
+                    <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
+                    <span>LinkedIn</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        );
       default:
         return null;
     }
@@ -126,56 +182,4 @@ export default function AboutMe() {
       />
     </>
   );
-}
-
-{
-  /* <div className="contacts">
-  <div className="first-div">
-    <div className="aboutDescription info">
-      <h2 style={{ color: '#ffd700' }}>{language === 'IT' ? 'Info utili' : 'Useful Infos'}</h2>
-      <div className="info-to-copy">
-        <p>
-          <span>{emailIcon}</span>
-          {email}
-        </p>
-        <FontAwesomeIcon className="icon" icon={emailCopied ? faCheck : faCopy} onClick={() => handleCopy('email')} />
-      </div>
-      <div className="info-to-copy">
-        <p>
-          <span>{phoneIcon}</span>
-          {phone}
-        </p>
-        <FontAwesomeIcon className="icon" icon={phoneCopied ? faCheck : faCopy} onClick={() => handleCopy('phone')} />
-      </div>
-      <div className="info-to-copy">
-        <p>
-          <span>{whatsappIcon}</span>
-          <a
-            style={{ marginRight: '10px', fontWeight: 'bold', color: '#ffd700', textDecoration: 'none' }}
-            href={whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {language === 'IT' ? 'Scrivimi su Whatsapp' : 'Text me on WhatsApp'}
-          </a>
-        </p>
-      </div>
-    </div>
-    <div className="badge">
-      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-        <button className="github-badge">
-          <FontAwesomeIcon icon={faGithub} className="github-icon" />
-          <span>GitHub</span>
-        </button>
-      </a>
-      <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-        <button className="linkedin-badge">
-          <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-          <span>LinkedIn</span>
-        </button>
-      </a>
-    </div>
-  </div>
-</div>;
- */
 }
