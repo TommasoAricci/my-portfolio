@@ -7,29 +7,35 @@ import Tooltip from '@mui/material/Tooltip';
 import { useMediaQuery } from '@mui/material';
 
 export default function Project({ src, title, link, git, text }) {
-
   const isLaptop = useMediaQuery('(min-width: 1024px)');
 
   const tooltipStyles = {
     fontSize: '1rem',
     textAlign: 'center',
-    display: 'block',
+    display: isLaptop ? 'block' : 'none',
   };
 
   const tooltipProps = {
-    placement: isLaptop ? 'right' : 'bottom',
+    placement: 'bottom',
     arrow: true,
     disableTouchListener: false,
     enterTouchDelay: 0,
-    leaveTouchDelay: 3000,
+    leaveTouchDelay: 100000,
     slotProps: { tooltip: { sx: tooltipStyles } },
+    PopperProps: {
+      modifiers: [
+        {
+          name: 'flip',
+          options: {
+            fallbackPlacements: [],
+          },
+        },
+      ],
+    },
   };
 
   return (
-    <Tooltip
-      title={text}
-      {...tooltipProps}
-    >
+    <Tooltip title={text} {...tooltipProps}>
       <div className="project-card">
         <img src={src} alt={title} className="project-image" />
         <h3 className="project-title">{title}</h3>

@@ -36,8 +36,6 @@ export default function Skills() {
     setActiveTab('frontend');
   }, []);
 
-  console.log(language);
-
   // content per tab
 
   const renderTabContent = useMemo(() => {

@@ -10,12 +10,40 @@ import { useStore } from '../store';
 import Title from '../components/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { Tooltip } from '@mui/material';
+import TooltipWorks from '../components/Tooltip-works';
+import { workTexts, educationTexts } from '../texts';
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('works');
   const { setIsOpen, language } = useStore();
   const work = <FontAwesomeIcon icon={faBriefcase} />;
   const education = <FontAwesomeIcon icon={faGraduationCap} />;
+
+  const tooltipStyles = {
+    fontSize: '1rem',
+    textAlign: 'center',
+    display: 'block',
+  };
+
+  const tooltipProps = {
+    placement: 'bottom-start',
+    arrow: true,
+    disableTouchListener: false,
+    enterTouchDelay: 0,
+    leaveTouchDelay: 1200,
+    slotProps: { tooltip: { sx: tooltipStyles } },
+    PopperProps: {
+      modifiers: [
+        {
+          name: 'flip',
+          options: {
+            fallbackPlacements: [],
+          },
+        },
+      ],
+    },
+  };
 
   useEffect(() => {
     setIsOpen(false);
@@ -29,54 +57,47 @@ export default function Skills() {
         return (
           <>
             <VerticalTimeline animate={false}>
-              <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: '#FFD700',
-                  color: 'black',
-                }}
-                contentArrowStyle={{
-                  borderRight: '7px solid  #03a9f4',
-                }}
-                date="2024 - present"
-                dateClassName="custom-date"
-                iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                position="left"
-              >
-                <h3 className="vertical-timeline-element-title">Frontend Developer</h3>
-                <p>Erbrand srl and Technip</p>
-              </VerticalTimelineElement>
+              <Tooltip title={workTexts.first[language]} {...tooltipProps}>
+                <div className="tooltip-works">
+                  <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{
+                      background: '#FFD700',
+                      color: 'black',
+                    }}
+                    contentArrowStyle={{
+                      borderRight: '7px solid #FFD700',
+                    }}
+                    date="2024 - present"
+                    dateClassName="custom-date"
+                    iconStyle={{ background: '#03a9f4', color: '#fff' }}
+                    position="left"
+                  >
+                    <h3 className="vertical-timeline-element-title">Frontend Developer</h3>
+                    <p>Erbrand srl and Technip</p>
+                  </VerticalTimelineElement>
+                </div>
+              </Tooltip>
 
-              <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: '#162129',
-                  color: '#fff',
-                }}
-                date="2020 - 2024"
-                dateClassName="custom-date"
-                iconStyle={{ background: '#03a9f4', color: '#fff' }}
+              <TooltipWorks
+                date="2023 - 2024"
+                itText="Copywriter"
+                engText="Copywriter"
+                pText="Freelance"
+                toolText={workTexts.second[language]}
                 position="right"
-              >
-                <h3 className="vertical-timeline-element-title">Blogger and Copywriter</h3>
-                <p>{language === 'IT' ? '' : 'Web Designer'}</p>
-              </VerticalTimelineElement>
+                textPosition="top-end"
+              />
 
-              <VerticalTimelineElement
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: '#162129',
-                  color: '#fff',
-                }}
-                date="2008 - 2010"
-                dateClassName="custom-date"
-                iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                position="left" // A sinistra
-              >
-                <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                <p>User Experience, Visual Design</p>
-              </VerticalTimelineElement>
+              <TooltipWorks
+                date="2022 - 2023"
+                itText="Fotografo"
+                engText="Photographer"
+                pText="Freelance"
+                toolText={workTexts.third[language]}
+                position="left"
+                textPosition="top-start"
+              />
             </VerticalTimeline>
           </>
         );
@@ -85,39 +106,32 @@ export default function Skills() {
           <>
             <>
               <VerticalTimeline animate={false}>
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                  contentStyle={{ background: '#03a9f4', color: '#fff' }}
-                  contentArrowStyle={{
-                    borderRight: '7px solid  #03a9f4',
-                  }}
-                  date="2023 - present"
-                  dateClassName="custom-date"
-                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                  position="left" // A sinistra
-                >
-                  <h3 className="vertical-timeline-element-title">Start2Impact School</h3>
-                  <p>Full Stack Developer Course</p>
-                  {/*                 <div className="infoIcon">
-                  <FontAwesomeIcon icon={faCircleInfo} />
-                </div> */}
-                </VerticalTimelineElement>
+                <Tooltip title={educationTexts.first[language]} {...tooltipProps}>
+                  <div className="tooltip-works">
+                    <VerticalTimelineElement
+                      className="vertical-timeline-element--work"
+                      contentStyle={{ background: '#03a9f4', color: '#fff' }}
+                      contentArrowStyle={{
+                        borderRight: '7px solid  #03a9f4',
+                      }}
+                      date="2023 - present"
+                      dateClassName="custom-date"
+                      iconStyle={{ background: '#03a9f4', color: '#fff' }}
+                      position="left"
+                    >
+                      <h3 className="vertical-timeline-element-title">Start2Impact School</h3>
+                      <p>Full Stack Developer Course</p>
+                    </VerticalTimelineElement>
+                  </div>
+                </Tooltip>
 
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                  contentStyle={{
-                    background: '#162129',
-                    color: '#fff',
-                  }}
-                  date="2010 - 2011"
-                  dateClassName="custom-date"
-                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                  position="right" // A destra
-                >
-                  <h3 className="vertical-timeline-element-title">Art Director</h3>
-                  <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                  <p>Creative Direction, User Experience, Visual Design, SEO, Online Marketing</p>
-                </VerticalTimelineElement>
+                <TooltipWorks
+                  date="2022 - 2023"
+                  itText="Frontend Developer"
+                  engText="Frontend Developer"
+                  toolText={workTexts.third[language]}
+                  position="right"
+                />
 
                 <VerticalTimelineElement
                   className="vertical-timeline-element--work"
@@ -132,22 +146,6 @@ export default function Skills() {
                 >
                   <h3 className="vertical-timeline-element-title">Web Designer</h3>
                   <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                  <p>User Experience, Visual Design</p>
-                </VerticalTimelineElement>
-
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                  contentStyle={{
-                    background: '#162129',
-                    color: '#fff',
-                  }}
-                  date="2006 - 2008"
-                  dateClassName="custom-date"
-                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                  position="right" // A destra
-                >
-                  <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                  <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
                   <p>User Experience, Visual Design</p>
                 </VerticalTimelineElement>
               </VerticalTimeline>

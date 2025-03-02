@@ -49,12 +49,14 @@ export default function Projects() {
                 title="Cafequiz"
                 link="https://tommasoaricci.github.io/quiz-app/"
                 git="https://github.com/TommasoAricci/quiz-app"
+                text={projectTexts.Cafequiz[language]}
               />
               <Project
                 src={counter}
                 title="Counter"
                 link="https://tommasoaricci.github.io/javascript-counter/"
                 git="https://github.com/TommasoAricci/javascript-counter"
+                text={projectTexts.Counter[language]}
               />
             </div>
           </>

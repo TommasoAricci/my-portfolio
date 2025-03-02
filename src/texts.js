@@ -45,4 +45,37 @@ export const projectTexts = {
     IT: `Bookfinder e' un sito di ricerca di libri online. È possibile cercare libri per solamente per genere letterario. Viene usata l'API di Openlibrary.`,
     EN: `Bookfinder is an online book search site. You can search for books by literary genre. It uses the Openlibrary API.`,
   },
+
+  Cafequiz: {
+    IT: `Cafequiz è un'app che ho creato per un cafe in Australia nel quale ho lavorato. L'ho creata perVolevo aiutare lo staff a memorizzare più velocemente tutto il menu.`,
+    EN: `Cafequiz is an app I created for a cafe in Australia in which I worked as a chef. I created it to help the staff to remember all the menu faster.`,
+  },
+
+  Counter: {
+    IT: `Questo counter è un semplice contatore di click. L'ho creato durante il corso per dimostrare le competenze acquisite con il linguaggio Javascript.`,
+    EN: `This counter is a simple click counter. I created it during the course to demonstrate the skills acquired with the Javascript language.`,
+  },
 };
+
+export const workTexts = {
+  first:{
+    IT: `In questo lavoro mi sto occupando dello sviluppo lato frontend di un gestionale online per un'azienda che gestisce stabilimenti petroliferi. Utilizzo principalmente ReactJs e SQLServer.`,
+    EN: `In this work I am working on the frontend development of an online accounting system for an oil company. I mainly use ReactJs and SQLServer.`,
+  },
+  second: {
+    IT: `Negli ultimi anni ho creato un blog online in cui scrivevo articoli in ambito viaggio e crescita personale. Ho inoltre collaborato con varie testate online realizzando articoli in ottica SEO utilizzando il CMS Wordpress.`,
+    EN: `In the last years I created an online blog where I wrote articles in the field of travel and personal growth. I have also collaborated with various online magazines by writing articles in SEO focus using the CMS Wordpress.`,
+  },
+  third: {
+    IT: `Essendo diplomato in Fotografia ho lavorato all'interno di un'azienda televisiva, per dopo passare ad un lavoro da freelance lavorando per eventi e privati.`,
+    EN: `Being graduated in Photography I worked inside a television company, then I moved to a freelance job working for events and private clients.`,
+  }
+}
+
+export const educationTexts = {
+  first: {
+    IT: `Ho conseguito il corso di FullStack Developer di start2Impact. Qui ho studiato i principali linguaggi di programmazione ed ho messo in pratica le mie conoscenze con dei progetti pratici.`,
+    EN: `I have completed the FullStack Developer course of start2Impact. Here I have studied the main programming languages and have put my knowledge into practice with practical projects.`,
+  },
+  second: ``
+}

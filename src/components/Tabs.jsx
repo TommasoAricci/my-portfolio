@@ -2,15 +2,16 @@ import React from 'react';
 import { useMediaQuery } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import '../style/Tabs.scss';
+import zIndex from '@mui/material/styles/zIndex';
 
 export default function Tabs(props) {
-
   const isLaptop = useMediaQuery('(min-width: 1024px)');
 
   const tooltipStyles = {
     fontSize: isLaptop ? '1rem' : '0.8rem',
     textAlign: 'center',
     display: 'block',
+    zIndex: 9999,
   };
 
   const tooltipProps = {
@@ -18,8 +19,18 @@ export default function Tabs(props) {
     arrow: true,
     disableTouchListener: false,
     enterTouchDelay: 0,
-    leaveTouchDelay: 3000,
-    slotProps: { tooltip: { sx: tooltipStyles } },
+    leaveTouchDelay: 1200,
+    slotProps: {
+      tooltip: {
+        sx: {
+          ...tooltipStyles,
+          zIndex: 9999,
+        },
+      },
+    },
+    PopperProps: {
+      sx: { zIndex: 9999 }
+    },
   };
 
   return (

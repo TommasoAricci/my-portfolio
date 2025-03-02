@@ -51,7 +51,7 @@ export default function ContactUs() {
   return (
     <>
       <div className="contact-form">
-        {!formSent && <h2 style={{ color: '#ffd700' }}>{language === 'IT' ? 'Oppure scrivimi' : 'Or write me'}</h2>}
+        {!formSent && <h2>{language === 'IT' ? 'Oppure scrivimi' : 'Or write me'}</h2>}
         <form ref={form} onSubmit={sendEmail}>
           <label>{language === 'IT' ? 'Nome' : 'Name'}</label>
           <input type="text" name="user_name" required />

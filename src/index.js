@@ -7,6 +7,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Work from './pages/Work';
 import Projects from './pages/Projects';
+import Contacts from './pages/Contacts';
 import './style/pages/lightMode.scss';
 
 // Definisci le rotte
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: '/projects',
     element: <Projects />,
+  },
+  {
+    path: '/contacts',
+    element: <Contacts />,
   },
 ]);
 

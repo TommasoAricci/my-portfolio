@@ -5,6 +5,7 @@
   width: 90%;
   margin: 0 auto;
   margin-bottom: 150px;
+  cursor: url('../../images/cursor2.svg'), auto;
 }
 
 .vertical-timeline-element-content .vertical-timeline-element-date {
@@ -37,17 +38,25 @@
 .vertical-timeline-element-content {
   text-align: center;
   margin-left: 0;
-  cursor: url('../../images/cursor.svg'), auto;
 }
 
 .vertical-timeline {
   width: 80% !important;
 }
 
+.tooltip-works {
+  padding: 30px;
+}
+
 @media only screen and (min-width: 1024px) {
   .mainWork {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 40px;
+    height: 100%;
   }
   .vertical-timeline-element-content {
     width: 40%;

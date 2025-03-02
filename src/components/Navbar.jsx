@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className={isOpen ? (theme === 'light' ? 'mainMobile-light' : 'mainMobile') : 'mainClose'}>
+      <div className={isOpen ? 'mainMobile' : 'mainClose'}>
         <img className="image" src={image} alt="" width="200px" />
         <div className="fullName">TOMMASO ARICCI</div>
         <nav>
@@ -48,9 +48,11 @@ export default function Navbar() {
               <h2>{language === 'IT' ? 'Progetti' : 'Projects'}</h2>
             </div>
           </Link>
-          <div className="navDiv">
-            <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
-          </div>
+          <Link to="/contacts" style={linkStyle}>
+            <div className={location.pathname === '/contacts' ? 'navDiv' : 'navDiv'}>
+              <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
+            </div>
+          </Link>
         </nav>
       </div>
 

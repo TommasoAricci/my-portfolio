@@ -20,7 +20,7 @@ export default function Navbar() {
       <nav className={'mainLaptop'}>
         <div className="fullName">TOMMASO ARICCI</div>
         <Link to="/about" style={linkStyle}>
-          <div className={location.pathname === '/about' ||  location.pathname === '/' ? 'navDiv active' : 'navDiv'}>
+          <div className={location.pathname === '/about' || location.pathname === '/' ? 'navDiv active' : 'navDiv'}>
             <h2>{language === 'IT' ? 'Chi sono' : 'About me'}</h2>
           </div>
         </Link>
@@ -39,9 +39,11 @@ export default function Navbar() {
             <h2>{language === 'IT' ? 'Progetti' : 'Projects'}</h2>
           </div>
         </Link>
-        <div className="navDiv">
-          <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
-        </div>
+        <Link to="/contacts" style={linkStyle}>
+          <div className={location.pathname === '/contacts' ? 'navDiv active' : 'navDiv'}>
+            <h2>{language === 'IT' ? 'Contatti' : 'Contacts'}</h2>
+          </div>
+        </Link>
         <div className="tools">
           <button onClick={() => setLanguage(language === 'EN' ? 'IT' : 'EN')} className="translator-laptop">
             <FontAwesomeIcon icon={faGlobe} /> {language === 'EN' ? 'IT' : 'EN'}
