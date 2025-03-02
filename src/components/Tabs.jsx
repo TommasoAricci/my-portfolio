@@ -2,7 +2,6 @@ import React from 'react';
 import { useMediaQuery } from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import '../style/Tabs.scss';
-import zIndex from '@mui/material/styles/zIndex';
 
 export default function Tabs(props) {
   const isLaptop = useMediaQuery('(min-width: 1024px)');
