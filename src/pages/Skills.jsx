@@ -17,10 +17,13 @@ import btImg from '../images/tokens/boot.png';
 import sassImg from '../images/tokens/sass.png';
 import exImg from '../images/tokens/ex.png';
 import monImg from '../images/tokens/mon.png';
-import aiImg from '../images/tokens/ai.png';
 import psImg from '../images/tokens/ps.png';
 import seoImg from '../images/tokens/seo.png';
 import Tabs from '../components/Tabs';
+import netlify from '../images/tokens/netlify.png';
+import github from '../images/tokens/github.png';
+import npm from '../images/tokens/npm.svg';
+import vscode from '../images/tokens/vscode.png';
 import { useStore } from '../store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faDatabase, faPalette } from '@fortawesome/free-solid-svg-icons';
@@ -80,6 +83,10 @@ export default function Skills() {
                     <img src={git} alt="Git logo" />
                     <span>Git</span>
                   </div>
+                  <div className="skill-badge">
+                    <img src={npm} alt="Git logo" />
+                    <span>Npm</span>
+                  </div>
                   {/*                 <div className="skill-badge">
                   <img src={axImg} alt="Axios logo" />
                   <span>Axios</span>
@@ -111,12 +118,12 @@ export default function Skills() {
                     <span>NodeJS</span>
                   </div>
                   <div className="skill-badge">
-                    <img src={exImg} alt="Express Logo" />
-                    <span>Express</span>
+                    <img src={mongoImg} alt="Mongo logo" />
+                    <span>MONGODB</span>
                   </div>
                   <div className="skill-badge">
-                    <img src={mongoImg} alt="Mongo logo" />
-                    <span>MONGO DB</span>
+                    <img src={exImg} alt="Express Logo" />
+                    <span>Express</span>
                   </div>
                   <div className="skill-badge">
                     <img src={monImg} alt="Mongoose logo" />
@@ -132,12 +139,34 @@ export default function Skills() {
           <>
             <div className="skills-container">
               <div className="skills-first">
-                <h3 id="skills-h3">{language === 'IT' ? 'Blog - Scrittura' : 'Blog - Writing'}</h3>
+                <h3 id="skills-h3">{language === 'IT' ? 'Strumenti - Piattaforme' : 'Tools - Platforms'}</h3>
                 <div className="extra">
                   <div className="skill-badge">
                     <img src={wpImg} alt="WORDPRESS Logo" />
-                    <span>WORDPRESS</span>
+                    <span>Wordpress</span>
                   </div>
+                  <div className="skill-badge">
+                    <img src={github} alt="COPYWRITING logo" />
+                    <span>Github</span>
+                  </div>
+                  <div className="skill-badge">
+                    <img src={npm} alt="SEO logo" />
+                    <span>Npm</span>
+                  </div>
+                  <div className="skill-badge">
+                    <img src={vscode} alt="SEO logo" />
+                    <span>VsCode</span>
+                  </div>
+                  <div className="skill-badge">
+                    <img src={netlify} alt="SEO logo" />
+                    <span>Netlify</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="skills-second">
+                <h3 id="skills-h3">{language === 'IT' ? 'Scrittura - Grafica' : 'Writing - Graphic'}</h3>
+                <div className="extra">
                   <div className="skill-badge">
                     <img src={copyImg} alt="COPYWRITING logo" />
                     <span>COPYWRITING</span>
@@ -146,23 +175,13 @@ export default function Skills() {
                     <img src={seoImg} alt="SEO logo" />
                     <span>SEO</span>
                   </div>
-                </div>
-              </div>
-
-              <div className="skills-second">
-                <h3 id="skills-h3">{language === 'IT' ? 'Grafica' : 'Graphic'}</h3>
-                <div className="graphic">
                   <div className="skill-badge">
-                    <img src={psImg} alt="PHOTOSHOP logo" />
-                    <span>PHOTOSHOP</span>
+                    <img src={blImg} alt="SEO logo" />
+                    <span>Blender</span>
                   </div>
                   <div className="skill-badge">
-                    <img src={aiImg} alt="ILLUSTRATOR logo" />
-                    <span>ILLUSTRATOR</span>
-                  </div>
-                  <div className="skill-badge">
-                    <img src={blImg} alt="BLENDER logo" />
-                    <span>BLENDER</span>
+                    <img src={psImg} alt="SEO logo" />
+                    <span>Photoshop</span>
                   </div>
                 </div>
               </div>
@@ -194,7 +213,7 @@ export default function Skills() {
         thirdIcon={extra}
         firstText={language === 'IT' ? 'Frontend' : 'Frontend'}
         secondText={language === 'IT' ? 'Backend' : 'Backend'}
-        thirdText={language === 'IT' ? 'Competenze Extra' : 'Extra Skills'}
+        thirdText={language === 'IT' ? 'Strumenti - Extra' : 'Tools - Extra'}
       />
     </>
   );

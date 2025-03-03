@@ -4,32 +4,43 @@ import Navbar from '../components/Navbar';
 import NavbarTop from '../components/Navbar-Top';
 import Tabs from '../components/Tabs';
 import Title from '../components/Title';
+import '../style/pages/Contact.scss';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faCopy, faCheck, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCopy,
+  faCheck,
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+  faLanguage,
+  faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { useStore } from '../store';
+import Tooltip from '@mui/material/Tooltip';
 
 export default function Contacts() {
-  const [activeTab, setActiveTab] = useState('form');
+  const [activeTab, setActiveTab] = useState('info');
   const email = 'ariccitommaso@hotmail.com';
   const phone = '+39 3516729510';
   const githubUrl = 'https://github.com/TommasoAricci';
   const linkedinUrl = 'https://www.linkedin.com/in/tommaso-aricci-ba545a11b/';
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
-  const emailIcon = <FontAwesomeIcon icon={faEnvelope} />;
-  const phoneIcon = <FontAwesomeIcon icon={faPhone} />;
-  const whatsappIcon = <FontAwesomeIcon icon={faWhatsapp} />;
-  const whatsapp = 'https://wa.me/+61474591535 ';
+  const whatsapp = 'https://wa.me/+61474591535';
 
   const handleCopy = (field) => {
     if (field === 'email') {
-      setEmailCopied(true);
-      setTimeout(() => setEmailCopied(false), 2000);
+      navigator.clipboard.writeText(email).then(() => {
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 2000);
+      });
     } else if (field === 'phone') {
-      setPhoneCopied(true);
-      setTimeout(() => setPhoneCopied(false), 2000);
+      navigator.clipboard.writeText(phone).then(() => {
+        setPhoneCopied(true);
+        setTimeout(() => setPhoneCopied(false), 2000);
+      });
     }
   };
 
@@ -37,67 +48,77 @@ export default function Contacts() {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'form':
-        return <Form />;
       case 'info':
         return (
-          <div className="contacts">
-            <div className="first-div">
-              <div className="aboutDescription info">
-                <h2 style={{ color: '#ffd700' }}>{language === 'IT' ? 'Info utili' : 'Useful Infos'}</h2>
-                <div className="info-to-copy">
-                  <p>
-                    <span>{emailIcon}</span>
-                    {email}
-                  </p>
+          <>
+            <div className="aboutDescription info">
+              <div className="info-to-copy">
+                <p>
+                  <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                  {email}
+                </p>
+                <Tooltip title={emailCopied ? 'Copied' : 'Copy'} placement="top" arrow>
                   <FontAwesomeIcon
                     className="icon"
                     icon={emailCopied ? faCheck : faCopy}
                     onClick={() => handleCopy('email')}
                   />
-                </div>
-                <div className="info-to-copy">
-                  <p>
-                    <span>{phoneIcon}</span>
-                    {phone}
-                  </p>
+                </Tooltip>
+              </div>
+              <div className="info-to-copy">
+                <p>
+                  <span><FontAwesomeIcon icon={faPhone} /></span>
+                  {phone}
+                </p>
+                <Tooltip title={phoneCopied ? 'Copied' : 'Copy'} placement="top" arrow>
                   <FontAwesomeIcon
                     className="icon"
                     icon={phoneCopied ? faCheck : faCopy}
                     onClick={() => handleCopy('phone')}
                   />
-                </div>
-                <div className="info-to-copy">
-                  <p>
-                    <span>{whatsappIcon}</span>
-                    <a
-                      style={{ marginRight: '10px', fontWeight: 'bold', color: '#ffd700', textDecoration: 'none' }}
-                      href={whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {language === 'IT' ? 'Scrivimi su Whatsapp' : 'Text me on WhatsApp'}
-                    </a>
-                  </p>
-                </div>
+                </Tooltip>
               </div>
-              <div className="badge">
-                <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                  <button className="github-badge">
-                    <FontAwesomeIcon icon={faGithub} className="github-icon" />
-                    <span>GitHub</span>
-                  </button>
-                </a>
-                <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
-                  <button className="linkedin-badge">
-                    <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
-                    <span>LinkedIn</span>
-                  </button>
-                </a>
+              <div className="info-to-copy">
+                <p>
+                  <span>
+                    <FontAwesomeIcon icon={faLocationDot} />
+                  </span>
+                  {language === 'IT' ? 'Padova, Italia' : 'Padua, Italy'}
+                </p>
+              </div>
+              <div className="info-to-copy">
+                <p>
+                  <span>
+                    <FontAwesomeIcon icon={faLanguage} />
+                  </span>
+                  {language === 'IT' ? 'Italiano, Inglese B2' : 'Italian, English B2'}
+                </p>
               </div>
             </div>
-          </div>
+            <div className="badge">
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <button className="github-badge">
+                  <FontAwesomeIcon icon={faGithub} className="github-icon" />
+                  <span>GitHub</span>
+                </button>
+              </a>
+              <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+                <button className="linkedin-badge">
+                  <FontAwesomeIcon icon={faLinkedin} className="linkedin-icon" />
+                  <span>LinkedIn</span>
+                </button>
+              </a>
+              <a href={whatsapp} target="_blank" rel="noopener noreferrer">
+                <button className="whatsapp-badge">
+                  <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
+                  <span>Whatsapp</span>
+                </button>
+              </a>
+            </div>
+          </>
         );
+      case 'form':
+        return <Form />;
       default:
         return null;
     }
@@ -112,12 +133,12 @@ export default function Contacts() {
       <Tabs
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        first="form"
-        second="info"
-        firstIcon={<FontAwesomeIcon icon={faBriefcase} />}
-        secondIcon={<FontAwesomeIcon icon={faBriefcase} />}
-        firstText={language === 'IT' ? 'Form' : 'Form'}
-        secondText={language === 'IT' ? 'Info' : 'Info'}
+        first="info"
+        second="form"
+        firstIcon={<FontAwesomeIcon icon={faInfoCircle} />}
+        secondIcon={<FontAwesomeIcon icon={faEnvelope} />}
+        firstText={language === 'IT' ? 'Info' : 'Info'}
+        secondText={language === 'IT' ? 'Email' : 'Email'}
       />
     </div>
   );

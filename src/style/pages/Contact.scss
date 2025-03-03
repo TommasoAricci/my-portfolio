@@ -1,0 +1,136 @@
+// Variables
+$bg-color: #121212;
+$text-color: #e0e0e0;
+$secondary-color: #03a9f4;
+$accent-color: #6200ea;
+
+.contacts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 100px;
+
+  .aboutDescription {
+    border-radius: 8px;
+    width: 95%;
+    max-width: 800px;
+    padding: 2rem;
+
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+  }
+
+  .info {
+    min-width: 400px;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 8px;
+
+    .info-to-copy {
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      span {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      .icon {
+        cursor: pointer;
+        transition: color 0.3s;
+        margin-left: 20px;
+
+        &:hover {
+          color: #ffd700;
+        }
+      }
+    }
+  }
+  .badge {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 30px;
+
+    .github-badge {
+      width: 200px;
+      height: 80px;
+      background-color: #24292f; // GitHub color
+      padding: 15px;
+      border-radius: 20px;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+
+      .github-icon,
+      .linkedin-icon,
+      .whatsapp-icon {
+        margin-right: 8px;
+      }
+
+      &:hover {
+        background-color: #1a1d23; // GitHub hover color
+      }
+    }
+
+    .whatsapp-badge {
+      @extend .github-badge;
+      background-color: #25d366; // WhatsApp color
+
+      &:hover {
+        background-color: #128c7e; // WhatsApp hover color
+      }
+    }
+
+    .linkedin-badge {
+      @extend .github-badge;
+      background-color: #0077b5; // LinkedIn color
+
+      &:hover {
+        background-color: #005c8a; // LinkedIn hover color
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .contacts {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 100%;
+
+    .badge {
+      max-width: 400px;
+      gap: 20px;
+    }
+  }
+}

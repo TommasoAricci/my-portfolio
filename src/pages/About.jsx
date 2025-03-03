@@ -26,7 +26,7 @@ export default function AboutMe() {
         return (
           <>
             <div className="aboutDescription profile">
-              <img src={me} alt="" />
+              <img src={me} style={{ borderRadius: '50%' }} alt="" />
               <div>
                 <h2>{language === 'IT' ? 'Chi è Tommaso?' : 'Who is Tommaso?'}</h2>
                 <p>{aboutTexts.aboutText[language]}</p>

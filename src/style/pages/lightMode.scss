@@ -10,6 +10,7 @@
   --mainAbout: #6200ea;
   --form: rgb(22, 33, 41);
   --titles: #ffd700;
+  --cursor : url('../../images/whiteCursor.svg'), auto;
 }
 
 [data-theme='light'] {
@@ -23,6 +24,11 @@
   --mainAbout: #333;
   --form: #e6954e;
   --titles: #e0e0e0;
+  --cursor : url('../../images/blackCursor.svg'), auto;
+}
+
+.mainWork, .projects{
+  cursor: var(--cursor);
 }
 
 .mainAbout {
@@ -78,6 +84,18 @@ html {
   }
 }
 
+.skill-badge {
+  color: var(--text-color);
+}
+
+.info-to-copy {
+  span{
+    color : var(--text-color);
+  }
+  .icon{
+    color : var(--text-color);
+  }
+}
 @media only screen and (min-width: 1024px) {
   .mainLaptop {
     background-color: var(--bg-color);

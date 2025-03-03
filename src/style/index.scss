@@ -1,7 +1,14 @@
 
 @font-face {
-  font-family: 'JetRegular';
+  font-family: 'JetBrains Mono';
   src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -19,6 +26,7 @@ body {
   line-height: 1.6;
   margin-bottom: 50px;
   align-self: flex-start;
+  font-family:  'Rubik', monospace;
 }
 
 .fade-enter {

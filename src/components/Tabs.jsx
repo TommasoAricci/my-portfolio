@@ -11,6 +11,7 @@ export default function Tabs(props) {
     textAlign: 'center',
     display: 'block',
     zIndex: 9999,
+    fontFamily: 'Rubik',
   };
 
   const tooltipProps = {
