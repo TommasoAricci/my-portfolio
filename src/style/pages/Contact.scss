@@ -5,7 +5,7 @@ $secondary-color: #03a9f4;
 $accent-color: #6200ea;
 
 .contacts {
-  width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,7 +16,6 @@ $accent-color: #6200ea;
 
   .aboutDescription {
     border-radius: 8px;
-    width: 95%;
     max-width: 800px;
     padding: 2rem;
 
@@ -28,16 +27,15 @@ $accent-color: #6200ea;
     }
 
     p {
-      font-size: 15px;
+      font-size: 13px;
       line-height: 1.7;
       font-weight: 300;
     }
   }
 
   .info {
-    min-width: 400px;
     max-width: 450px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
 
     .info-to-copy {
@@ -126,7 +124,16 @@ $accent-color: #6200ea;
     gap: 100px;
     margin-top: 0px;
     margin-bottom: 0px;
+    width: 100%;
     height: 100%;
+
+    .info{
+      min-width: 400px;
+      padding: 20px;
+      p{
+        font-size: 15px;
+      }
+    }
 
     .badge {
       max-width: 400px;

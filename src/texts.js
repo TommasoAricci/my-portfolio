@@ -30,7 +30,7 @@ export const aboutTexts = {
     sia ascoltarla che suonarla, specialmente genere rock. Mi piace cucinare vegetariano, sperimentare nuovi sapori e impastare le mie idee. Cammino molto, leggo libri di filosofia, psicologia e spiritualità. Mi piace guardare film fatti bene e fare foto mentre sono in viaggio.`,
 
     EN: `I am a person with many interests and a great desire to learn and try new things. I have a great passion for travel and exploration, I feel at ease when I am moving and stimulated by the things around me. I love music, whether to listen to it or to play it, especially rock genre.
-    I like to cook vegetarian, try new flavors and experiment with my ideas. I walk a lot, read books about philosophy, psychology and spirituality. I like to watch good movies and take photos while on a trip.`
+    I like to cook vegetarian, try new flavors and experiment with my ideas. I walk a lot, read books about philosophy, psychology and spirituality. I like to watch good movies and take photos while on a trip.`,
   },
 };
 
@@ -58,7 +58,7 @@ export const projectTexts = {
 };
 
 export const workTexts = {
-  first:{
+  first: {
     IT: `In questo lavoro mi sto occupando dello sviluppo lato frontend di un gestionale online per un'azienda che gestisce stabilimenti petroliferi. Utilizzo principalmente ReactJs e SQLServer.`,
     EN: `In this work I am working on the frontend development of an online accounting system for an oil company. I mainly use ReactJs and SQLServer.`,
   },
@@ -69,13 +69,20 @@ export const workTexts = {
   third: {
     IT: `Essendo diplomato in Fotografia ho lavorato all'interno di un'azienda televisiva, per dopo passare ad un lavoro da freelance lavorando per eventi e privati.`,
     EN: `Being graduated in Photography I worked inside a television company, then I moved to a freelance job working for events and private clients.`,
-  }
-}
+  },
+};
 
 export const educationTexts = {
   first: {
     IT: `Ho conseguito il corso di FullStack Developer di start2Impact. Qui ho studiato i principali linguaggi di programmazione ed ho messo in pratica le mie conoscenze con dei progetti pratici.`,
     EN: `I have completed the FullStack Developer course of start2Impact. Here I have studied the main programming languages and have put my knowledge into practice with practical projects.`,
   },
-  second: ``
-}
+  second: {
+    IT: `In questi anni ho seguito vari corsi in presenza e online per amplicare le mie competenze. Ho studiato videomaking, scrittura creativa e blogging. Inoltre ho partecipato ad esperienze di volontariato `,
+    EN: ` In these years I have followed various courses in person and online to broaden my skills. I have studied videomaking, creative writing and blogging. I have also participated in volunteer experiences`,
+  },
+  third: {
+    IT: `Ho conseguito il diploma in Fotografia presso l'Istituto Giovanni Valle di Padova. Qui ho studiato materie grafiche, fotografiche, digitali e di marketing.`,
+    EN: `I have completed the diploma in Photography at the Giovanni Valle Institute of Padua. Here I studied graphic subjects, photography, digital and marketing.`,
+  },
+};

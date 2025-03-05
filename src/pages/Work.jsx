@@ -13,17 +13,19 @@ import { faBriefcase, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { Tooltip } from '@mui/material';
 import TooltipWorks from '../components/Tooltip-works';
 import { workTexts, educationTexts } from '../texts';
+import { useMediaQuery } from '@mui/material';
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState('works');
   const { setIsOpen, language } = useStore();
   const work = <FontAwesomeIcon icon={faBriefcase} />;
   const education = <FontAwesomeIcon icon={faGraduationCap} />;
+  const isLaptop = useMediaQuery('(min-width: 1024px)');
 
   const tooltipStyles = {
     fontSize: '1rem',
     textAlign: 'center',
-    display: 'block',
+    display: isLaptop ? 'block' : 'none',
   };
 
   const tooltipProps = {
@@ -80,7 +82,7 @@ export default function Skills() {
               </Tooltip>
 
               <TooltipWorks
-                date="2023 - 2024"
+                date="2021 - 2023"
                 itText="Copywriter"
                 engText="Copywriter"
                 pText="Freelance"
@@ -90,7 +92,7 @@ export default function Skills() {
               />
 
               <TooltipWorks
-                date="2022 - 2023"
+                date="2018 - 2022f"
                 itText="Fotografo"
                 engText="Photographer"
                 pText="Freelance"
@@ -104,52 +106,54 @@ export default function Skills() {
       case 'education':
         return (
           <>
-            <>
-              <VerticalTimeline animate={false}>
-                <Tooltip title={educationTexts.first[language]} {...tooltipProps}>
-                  <div className="tooltip-works">
-                    <VerticalTimelineElement
-                      className="vertical-timeline-element--work"
-                      contentStyle={{ background: '#03a9f4', color: '#fff' }}
-                      contentArrowStyle={{
-                        borderRight: '7px solid  #03a9f4',
-                      }}
-                      date="2023 - present"
-                      dateClassName="custom-date"
-                      iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                      position="left"
-                    >
-                      <h3 className="vertical-timeline-element-title">Start2Impact School</h3>
-                      <p>Full Stack Developer Course</p>
-                    </VerticalTimelineElement>
-                  </div>
-                </Tooltip>
+            <VerticalTimeline animate={false}>
+              <Tooltip title={educationTexts.first[language]} {...tooltipProps}>
+                <div className="tooltip-works">
+                  <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    contentStyle={{ background: '#03a9f4', color: '#fff' }}
+                    contentArrowStyle={{
+                      borderRight: '7px solid  #03a9f4',
+                    }}
+                    date="2023 - 2025"
+                    dateClassName="custom-date"
+                    iconStyle={{ background: '#03a9f4', color: '#fff' }}
+                    position="left"
+                  >
+                    <h3 className="vertical-timeline-element-title">Full Stack Developer Course</h3>
+                    <p>Start2Impact School</p>
+                  </VerticalTimelineElement>
+                </div>
+              </Tooltip>
 
-                <TooltipWorks
-                  date="2022 - 2023"
-                  itText="Frontend Developer"
-                  engText="Frontend Developer"
-                  toolText={workTexts.third[language]}
-                  position="right"
-                />
+              <TooltipWorks
+                date="2019 - 2022"
+                itText="Corsi ed esperienze formative"
+                engText="Courses and formative experiences"
+                pText={
+                  language === 'IT'
+                    ? 'Corsi privati per ampliare le mie competenze ed esperienze di volontariato'
+                    : 'Private courses to broaden my skills and volunteer experiences'
+                }
+                toolText={educationTexts.second[language]}
+                position="right"
+                textPosition="top-end"
+              />
 
-                <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
-                  contentStyle={{
-                    background: '#162129',
-                    color: '#fff',
-                  }}
-                  date="2008 - 2010"
-                  dateClassName="custom-date"
-                  iconStyle={{ background: '#03a9f4', color: '#fff' }}
-                  position="left" // A sinistra
-                >
-                  <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                  <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                  <p>User Experience, Visual Design</p>
-                </VerticalTimelineElement>
-              </VerticalTimeline>
-            </>
+              <TooltipWorks
+                date="2012 - 2017"
+                itText="Diploma in Fotografia"
+                engText="Diploma in Photography"
+                pText={
+                  language === 'IT'
+                    ? 'Istituo Artistico Giovanni Valle di Padova'
+                    : 'Giovanni Valle Artistic Institute of Padua'
+                }
+                toolText={educationTexts.third[language]}
+                position="left"
+                textPosition="top-start"
+              />
+            </VerticalTimeline>
           </>
         );
       default:
@@ -173,7 +177,7 @@ export default function Skills() {
         firstIcon={work}
         secondIcon={education}
         firstText={language === 'IT' ? 'Lavoro' : 'Work'}
-        secondText={language === 'IT' ? 'Formazione' : 'Education'}
+        secondText={language === 'IT' ? 'Formazione e Corsi' : 'Education and Courses'}
       />
     </>
   );

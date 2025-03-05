@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'JetBrains Mono';
   src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
@@ -21,12 +20,11 @@
 
 body {
   letter-spacing: 1px;
-  font-family: 'VT323', monospace;
   color: #e0e0e0;
   line-height: 1.6;
   margin-bottom: 50px;
   align-self: flex-start;
-  font-family:  'Rubik', monospace;
+  font-family: 'Rubik', monospace;
 }
 
 .fade-enter {

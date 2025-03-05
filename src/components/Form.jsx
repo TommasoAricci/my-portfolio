@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
-import "../style/Form.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { useStore } from "../store";
+import React, { useRef, useEffect, useState } from 'react';
+import emailjs from '@emailjs/browser';
+import '../style/Form.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { useStore } from '../store';
 
 export default function ContactUs() {
   const form = useRef();
@@ -16,14 +16,14 @@ export default function ContactUs() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-  
+
     const formData = new FormData(form.current);
     const emailParams = {
-      nome: formData.get("user_name"),
-      email: formData.get("user_email"),
-      messaggio: formData.get("message"),
+      nome: formData.get('user_name'),
+      email: formData.get('user_email'),
+      messaggio: formData.get('message'),
     };
-  
+
     emailjs
       .send(
         process.env.REACT_APP_EMAILJS_ID,
@@ -33,16 +33,16 @@ export default function ContactUs() {
       )
       .then(
         () => {
-          console.log("SUCCESS!");
+          console.log('SUCCESS!');
           setFormSent(true);
           form.current.reset();
-  
+
           setTimeout(() => {
             setFormSent(false);
-          }, 3000);
+          }, 5000);
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.log('FAILED...', error.text);
           alert("Errore nell'invio del messaggio");
         }
       );
@@ -50,25 +50,33 @@ export default function ContactUs() {
 
   return (
     <>
-      <div className="contact-form">
-        {!formSent && <h2>{language === 'IT' ? 'Oppure scrivimi' : 'Or write me'}</h2>}
-        <form ref={form} onSubmit={sendEmail}>
-          <label>{language === 'IT' ? 'Nome' : 'Name'}</label>
-          <input type="text" name="user_name" required />
-          <label>Email</label>
-          <input type="email" name="user_email" required />
-          <label>{language === 'IT' ? 'Messaggio' : 'Message'}</label>
-          <textarea name="message" required />
-          <button type="submit">{language === 'IT' ? 'Invia' : 'Send'}</button>
-        </form>
-        {formSent && (
-          <div className="success-message">
+      {!formSent && (
+        <div className="contact-form">
+          <form ref={form} onSubmit={sendEmail}>
+            <label>{language === 'IT' ? 'Nome' : 'Name'}</label>
+            <input type="text" name="user_name" required />
+            <label>Email</label>
+            <input type="email" name="user_email" required />
+            <label>{language === 'IT' ? 'Messaggio' : 'Message'}</label>
+            <textarea name="message" required />
+            <button type="submit">{language === 'IT' ? 'Invia' : 'Send'}</button>
+          </form>
+        </div>
+      )}
+
+      {formSent && (
+        <div className="success-message">
+          <div>
             <p>
-              {language === 'IT' ? 'Messaggio inviato con successo!' : 'Message sent successfully!'} <FontAwesomeIcon icon={faCheck} />
+              {language === 'IT' ? 'Messaggio inviato con successo' : 'Message sent successfully'}
+              <FontAwesomeIcon style={{ marginLeft: '5px' }} icon={faCheck} />
             </p>
           </div>
-        )}
-      </div>
+          <p>
+            {language === 'IT' ? 'Vi risponderò im prima possibile.' : 'I will get back to you as soon as possible.'}
+          </p>
+        </div>
+      )}
     </>
   );
 }

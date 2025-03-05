@@ -19,7 +19,7 @@ export default function Tabs(props) {
     arrow: true,
     disableTouchListener: false,
     enterTouchDelay: 0,
-    leaveTouchDelay: 1200,
+    leaveTouchDelay: 500000,
     slotProps: {
       tooltip: {
         sx: {
@@ -29,7 +29,7 @@ export default function Tabs(props) {
       },
     },
     PopperProps: {
-      sx: { zIndex: 9999 }
+      sx: { zIndex: 9999},
     },
   };
 

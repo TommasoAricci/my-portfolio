@@ -2,13 +2,16 @@ import React from 'react';
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { useStore } from '../store';
 import { Tooltip } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 
 export default function TooltipWorks({ date, itText, engText, pText, toolText, position, textPosition }) {
   const { language } = useStore();
+  const isLaptop = useMediaQuery('(min-width: 1024px)');
+
   const tooltipStyles = {
     fontSize: '1rem',
     textAlign: 'center',
-    display: 'block',
+    display: isLaptop ? 'block' : 'none',
   };
 
   const tooltipProps = {

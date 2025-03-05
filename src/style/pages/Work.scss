@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
   margin: 0 auto;
   margin-bottom: 150px;
 }
@@ -40,7 +39,7 @@
 }
 
 .vertical-timeline {
-  width: 80% !important;
+  width: 90% !important;
 }
 
 .tooltip-works {
@@ -55,6 +54,7 @@
     transform: translate(-50%, -50%);
     margin-bottom: 0px;
     margin-top: 40px;
+    width: 90%;
     height: 100%;
   }
   .vertical-timeline-element-content {
