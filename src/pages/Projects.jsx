@@ -46,6 +46,13 @@ export default function Projects() {
                 text={projectTexts.Bookfinder[language]}
               />
               <Project
+                src={lifetodo}
+                title="Lifetodo"
+                link="https://lifetodo-my.netlify.app/"
+                git="https://github.com/TommasoAricci/Lifetodo-frontend"
+                text={projectTexts.Lifetodo[language]}
+              />
+              <Project
                 src={cafequiz}
                 title="Cafequiz"
                 link="https://tommasoaricci.github.io/quiz-app/"
@@ -58,13 +65,6 @@ export default function Projects() {
                 link="https://tommasoaricci.github.io/javascript-counter/"
                 git="https://github.com/TommasoAricci/javascript-counter"
                 text={projectTexts.Counter[language]}
-              />
-              <Project
-                src={lifetodo}
-                title="Counter"
-                link="https://lifetodo-my.netlify.app/"
-                git="https://github.com/TommasoAricci/Lifetodo-frontend"
-                text={projectTexts.Lifetodo[language]}
                 position="right"
               />
             </div>
