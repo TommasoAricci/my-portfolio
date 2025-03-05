@@ -10,7 +10,7 @@ export const aboutTexts = {
   },
 
   whyText: {
-    IT: `Ho deciso di intraprendere la carriera da Web Developer perchè sono sempre stato affascinato dal funzionamento di internet e delle applicazioni web.
+    IT: `Ho deciso di intraprendere la carriera da Web Developer perché sono sempre stato affascinato dal funzionamento di internet e delle applicazioni web.
         Mi piace l'idea di utilizzare le tecnologie per poter creare qualcosa di utile per gli altri mettendo in pratica le mie idee. Mi sento inoltre portato per l'analisi e la risoluzione di problemi.`,
 
     EN: `I decided to pursue a career as a Web Developer because I have always been fascinated by how the internet and web applications work.
@@ -18,7 +18,7 @@ export const aboutTexts = {
   },
 
   purposeText: {
-    IT: `Essendo una persona che ha a cuore il benessere, la crescita personale, l'arte e tutto ciò che può mandare un messaggio importante, mi piacerebbe collaborare con delle realtà che possono portare del valore e che vogliono fare le differenza.
+    IT: `Essendo una persona che ha a cuore il benessere, la crescita personale, l'arte e tutto ciò che può mandare un messaggio importante, mi piacerebbe collaborare con delle realtà che possono portare del valore e che vogliono fare la differenza.
     Spero così di poter utilizzare le mie competenze per contribuire al miglioramento della vita di altre persone.`,
 
     EN: `Being a person who has a heart for well-being, personal growth, art and everything that can bring a meaningful message, I would like to collaborate with realities that can bring value and want to make a difference.
@@ -27,7 +27,7 @@ export const aboutTexts = {
 
   passionText: {
     IT: `Sono una persona dai mille interessi e con tanta voglia di imparare e di provare cose nuove. Ho una grande passione per i viaggi e per l'esplorazione, mi sento a mio agio quando sono in movimento e stimolato dalle cose attorno a me. Amo la musica,
-    sia ascoltarla che suonarla, specialmente genere rock. Mi piace cucinare vegetariano, sperimentare nuovi sapori e impastare le mie idee. Cammino molto, leggo libri di filosofia, psicologia e spiritualità. Mi piace guardare film fatti bene e fare foto mentre sono in viaggio.`,
+    sia ascoltarla che suonarla, specialmente genere rock. Mi piace cucinare vegetariano, sperimentare nuovi sapori e impastare le mie idee. Cammino molto, leggo libri di filosofia, psicologia e spiritualità. Mi piace guardare film fatti bene e fare foto mentre sono in viaggio.`,
 
     EN: `I am a person with many interests and a great desire to learn and try new things. I have a great passion for travel and exploration, I feel at ease when I am moving and stimulated by the things around me. I love music, whether to listen to it or to play it, especially rock genre.
     I like to cook vegetarian, try new flavors and experiment with my ideas. I walk a lot, read books about philosophy, psychology and spirituality. I like to watch good movies and take photos while on a trip.`,
@@ -36,18 +36,18 @@ export const aboutTexts = {
 
 export const projectTexts = {
   Greenway: {
-    IT: `Greenway è un applicazione che consente di cercare ricette vegetariane e vegane. Viene utilizzata l'API di Spoonacular.`,
+    IT: `Greenway è un'applicazione che consente di cercare ricette vegetariane e vegane. Viene utilizzata l'API di Spoonacular.`,
 
     EN: `Greenway is an application that allows you to search for vegetarian and vegan recipes. It uses the Spoonacular API.`,
   },
 
   Bookfinder: {
-    IT: `Bookfinder e' un sito di ricerca di libri online. È possibile cercare libri per solamente per genere letterario. Viene usata l'API di Openlibrary.`,
+    IT: `Bookfinder è un sito di ricerca libri online. È possibile cercare libri solo per genere letterario. Viene usata l'API di Openlibrary.`,
     EN: `Bookfinder is an online book search site. You can search for books by literary genre. It uses the Openlibrary API.`,
   },
 
   Cafequiz: {
-    IT: `Cafequiz è un'app che ho creato per un cafe in Australia nel quale ho lavorato. L'ho creata perVolevo aiutare lo staff a memorizzare più velocemente tutto il menu.`,
+    IT: `Cafequiz è un'app che ho creato per un caffè in Australia nel quale ho lavorato. L'ho creata per aiutare lo staff a memorizzare più velocemente tutto il menu.`,
     EN: `Cafequiz is an app I created for a cafe in Australia in which I worked as a chef. I created it to help the staff to remember all the menu faster.`,
   },
 
@@ -55,11 +55,23 @@ export const projectTexts = {
     IT: `Questo counter è un semplice contatore di click. L'ho creato durante il corso per dimostrare le competenze acquisite con il linguaggio Javascript.`,
     EN: `This counter is a simple click counter. I created it during the course to demonstrate the skills acquired with the Javascript language.`,
   },
+  Copy:{
+    IT: `Durante la mia esperienza da copywriter ho collaborato con varie testate giornalistiche online scrivendo articoli in tematiche diverse. Dal marketing alla tecnologia, alla gastronomia e ai viaggi.`,
+    EN: `During my experience as a copywriter I have collaborated with various online magazines writing articles in diverse themes. From marketing to technology, gastronomy and travel.`,
+  },
+  Interview:{
+    IT: `Durante il mio periodo sabbatico in cui feci molti viaggi fui intervistato da una piccola agenzia editoriale di radio e webTv.`,
+    EN: `During my sabbatic period in which I went many trips I was interviewed by a small editorial agency of radio and webTv.`,
+  },
+  Lifetodo:{
+    IT: `Lifetodo è un'app che ho realizzato che ha lo scopo di facilitare la gestione delle cose da fare e gli appuntio da prendere. È possibile scrivere note, liste, inserire titoli di libri e canzoni preferite.`,
+    EN: `Lifetodo is an app I have created that has the purpose of facilitating the management of things to do and appointments. You can write notes, lists, add book and song titles.`,
+  }
 };
 
 export const workTexts = {
   first: {
-    IT: `In questo lavoro mi sto occupando dello sviluppo lato frontend di un gestionale online per un'azienda che gestisce stabilimenti petroliferi. Utilizzo principalmente ReactJs e SQLServer.`,
+    IT: `In questo lavoro mi sto occupando dello sviluppo frontend di un gestionale online per un'azienda che gestisce stabilimenti petroliferi. Utilizzo principalmente ReactJs e SQLServer.`,
     EN: `In this work I am working on the frontend development of an online accounting system for an oil company. I mainly use ReactJs and SQLServer.`,
   },
   second: {
@@ -67,7 +79,7 @@ export const workTexts = {
     EN: `In the last years I created an online blog where I wrote articles in the field of travel and personal growth. I have also collaborated with various online magazines by writing articles in SEO focus using the CMS Wordpress.`,
   },
   third: {
-    IT: `Essendo diplomato in Fotografia ho lavorato all'interno di un'azienda televisiva, per dopo passare ad un lavoro da freelance lavorando per eventi e privati.`,
+    IT: `Essendo diplomato in Fotografia ho lavorato all'interno di un'azienda televisiva, per poi passare a un lavoro da freelance lavorando per eventi e privati.`,
     EN: `Being graduated in Photography I worked inside a television company, then I moved to a freelance job working for events and private clients.`,
   },
 };
@@ -78,8 +90,8 @@ export const educationTexts = {
     EN: `I have completed the FullStack Developer course of start2Impact. Here I have studied the main programming languages and have put my knowledge into practice with practical projects.`,
   },
   second: {
-    IT: `In questi anni ho seguito vari corsi in presenza e online per amplicare le mie competenze. Ho studiato videomaking, scrittura creativa e blogging. Inoltre ho partecipato ad esperienze di volontariato `,
-    EN: ` In these years I have followed various courses in person and online to broaden my skills. I have studied videomaking, creative writing and blogging. I have also participated in volunteer experiences`,
+    IT: `In questi anni ho seguito vari corsi in presenza e online per ampliare le mie competenze. Ho studiato videomaking, scrittura creativa e blogging. Inoltre ho partecipato ad esperienze di volontariato.`,
+    EN: `In these years I have followed various courses in person and online to broaden my skills. I have studied videomaking, creative writing and blogging. I have also participated in volunteer experiences.`,
   },
   third: {
     IT: `Ho conseguito il diploma in Fotografia presso l'Istituto Giovanni Valle di Padova. Qui ho studiato materie grafiche, fotografiche, digitali e di marketing.`,

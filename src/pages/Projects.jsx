@@ -13,6 +13,7 @@ import cafequiz from '../images/projects/cafequiz.png';
 import counter from '../images/projects/counter.png';
 import interview from '../images/projects/interview.png';
 import copy from '../images/projects/copy.png';
+import lifetodo from '../images/projects/lifetodo.png';
 import { projectTexts } from '../texts';
 import { useStore } from '../store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -58,6 +59,14 @@ export default function Projects() {
                 git="https://github.com/TommasoAricci/javascript-counter"
                 text={projectTexts.Counter[language]}
               />
+              <Project
+                src={lifetodo}
+                title="Counter"
+                link="https://lifetodo-my.netlify.app/"
+                git="https://github.com/TommasoAricci/Lifetodo-frontend"
+                text={projectTexts.Lifetodo[language]}
+                position="right"
+              />
             </div>
           </>
         );
@@ -68,14 +77,14 @@ export default function Projects() {
               <Project
                 src={copy}
                 title="Copywriting Portfolio"
-                link="https://tommasoaricci.github.io/copy/"
-                git="https://github.com/TommasoAricci/copy"
+                link="https://muckrack.com/tommaso-aricci-1"
+                text={projectTexts.Copy[language]}
               />
               <Project
                 src={interview}
                 title="Travel Interviews"
-                link="https://tommasoaricci.github.io/interview/"
-                git="https://github.com/TommasoAricci/interview"
+                link="https://www.socialstation.it/new/?s=solodipassaggio"
+                text={projectTexts.Interview[language]}
               />
             </div>
           </>

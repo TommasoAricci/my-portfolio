@@ -6,7 +6,7 @@ import '../style/pages/Project-single.scss';
 import Tooltip from '@mui/material/Tooltip';
 import { useMediaQuery } from '@mui/material';
 
-export default function Project({ src, title, link, git, text }) {
+export default function Project({ src, title, link, git, text, position }) {
   const isLaptop = useMediaQuery('(min-width: 1024px)');
 
   const tooltipStyles = {
@@ -16,7 +16,7 @@ export default function Project({ src, title, link, git, text }) {
   };
 
   const tooltipProps = {
-    placement: 'bottom',
+    placement: position,
     arrow: true,
     disableTouchListener: false,
     enterTouchDelay: 0,
@@ -45,11 +45,11 @@ export default function Project({ src, title, link, git, text }) {
               <FontAwesomeIcon icon={faPlay} style={{ width: '20px' }} />
             </button>
           </a>
-          <a href={git} target="_blank" rel="noopener noreferrer">
+          {git && (<a href={git} target="_blank" rel="noopener noreferrer">
             <button className="icon-button github">
               <FontAwesomeIcon icon={faGithub} />
             </button>
-          </a>
+          </a>)}
         </div>
       </div>
     </Tooltip>
