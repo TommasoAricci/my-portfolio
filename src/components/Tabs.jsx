@@ -19,7 +19,7 @@ export default function Tabs(props) {
     arrow: true,
     disableTouchListener: false,
     enterTouchDelay: 0,
-    leaveTouchDelay: 500000,
+    leaveTouchDelay: 2000,
     slotProps: {
       tooltip: {
         sx: {
