@@ -152,7 +152,7 @@
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);  /* Ombra leggera bianca */
+      box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);  /* Ombra leggera bianca */
 
       &:hover {
         background-color: var(--secondary-color); // Cyan background on hover
