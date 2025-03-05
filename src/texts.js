@@ -55,18 +55,22 @@ export const projectTexts = {
     IT: `Questo counter è un semplice contatore di click. L'ho creato durante il corso per dimostrare le competenze acquisite con il linguaggio Javascript.`,
     EN: `This counter is a simple click counter. I created it during the course to demonstrate the skills acquired with the Javascript language.`,
   },
-  Copy:{
+  Lifetodo: {
+    IT: `Lifetodo è un'app che ho realizzato che ha lo scopo di facilitare la gestione delle cose da fare e gli appuntio da prendere. È possibile scrivere note, liste, inserire titoli di libri e canzoni preferite.`,
+    EN: `Lifetodo is an app I have created that has the purpose of facilitating the management of things to do and appointments. You can write notes, lists, add book and song titles.`,
+  },
+  Copy: {
     IT: `Durante la mia esperienza da copywriter ho collaborato con varie testate giornalistiche online scrivendo articoli in tematiche diverse. Dal marketing alla tecnologia, alla gastronomia e ai viaggi.`,
     EN: `During my experience as a copywriter I have collaborated with various online magazines writing articles in diverse themes. From marketing to technology, gastronomy and travel.`,
   },
-  Interview:{
+  Photos: {
+    IT: `Durate i miei viaggi feci molti scatti di street photography. Volevo catturare le diverse abitudini di culture diverse. Ad aprile 2023 realizzai una piccola mostra fotografica a Melbourne, Australia.`,
+    EN: `During my trips I took many street photography shots. I wanted to capture the different habits of different cultures. In April 2023 I realized a small photographic show in Melbourne, Australia.`,
+  },
+  Interview: {
     IT: `Durante il mio periodo sabbatico in cui feci molti viaggi fui intervistato da una piccola agenzia editoriale di radio e webTv.`,
     EN: `During my sabbatic period in which I went many trips I was interviewed by a small editorial agency of radio and webTv.`,
   },
-  Lifetodo:{
-    IT: `Lifetodo è un'app che ho realizzato che ha lo scopo di facilitare la gestione delle cose da fare e gli appuntio da prendere. È possibile scrivere note, liste, inserire titoli di libri e canzoni preferite.`,
-    EN: `Lifetodo is an app I have created that has the purpose of facilitating the management of things to do and appointments. You can write notes, lists, add book and song titles.`,
-  }
 };
 
 export const workTexts = {

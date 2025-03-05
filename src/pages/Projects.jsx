@@ -14,6 +14,7 @@ import counter from '../images/projects/counter.png';
 import interview from '../images/projects/interview.png';
 import copy from '../images/projects/copy.png';
 import lifetodo from '../images/projects/lifetodo.png';
+import photos from '../images/projects/photos.png';
 import { projectTexts } from '../texts';
 import { useStore } from '../store';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -80,11 +81,17 @@ export default function Projects() {
                 link="https://muckrack.com/tommaso-aricci-1"
                 text={projectTexts.Copy[language]}
               />
+               <Project
+                src={photos}
+                title="Travel Photos"
+                link="https://www.flickr.com/photos/tommasoaricci/"
+                text={projectTexts.Interview[language]}
+              />
               <Project
                 src={interview}
                 title="Travel Interviews"
                 link="https://www.socialstation.it/new/?s=solodipassaggio"
-                text={projectTexts.Interview[language]}
+                text={projectTexts.Photos[language]}
               />
             </div>
           </>
