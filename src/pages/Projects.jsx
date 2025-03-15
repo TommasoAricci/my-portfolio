@@ -39,6 +39,7 @@ export default function Projects() {
                 git="https://github.com/TommasoAricci/veg-recipes-founder"
                 text={projectTexts.Greenway[language]}
               />
+
               <Project
                 src={bookfinder}
                 title="Bookfinder"

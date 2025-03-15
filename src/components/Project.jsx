@@ -36,22 +36,26 @@ export default function Project({ src, title, link, git, text, position }) {
 
   return (
     <Tooltip title={text} {...tooltipProps}>
-      <div className="project-card">
-        <img src={src} alt={title} className="project-image" />
-        <h3 className="project-title">{title}</h3>
-        <div className="project-buttons">
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <button className="icon-button play">
-              <FontAwesomeIcon icon={faPlay} style={{ width: '20px' }} />
-            </button>
-          </a>
-          {git && (<a href={git} target="_blank" rel="noopener noreferrer">
-            <button className="icon-button github">
-              <FontAwesomeIcon icon={faGithub} />
-            </button>
-          </a>)}
+      {src && (
+        <div className="project-card">
+          <img src={src} alt={title} className="project-image" />
+          <h3 className="project-title">{title}</h3>
+          <div className="project-buttons">
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <button className="icon-button play">
+                <FontAwesomeIcon icon={faPlay} style={{ width: '20px' }} />
+              </button>
+            </a>
+            {git && (
+              <a href={git} target="_blank" rel="noopener noreferrer">
+                <button className="icon-button github">
+                  <FontAwesomeIcon icon={faGithub} />
+                </button>
+              </a>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </Tooltip>
   );
 }
