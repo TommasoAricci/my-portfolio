@@ -2,13 +2,17 @@ import React, { useRef, useEffect, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import '../style/Form.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useStore } from '../store';
+import img from '../images/sending.jpg';
 
 export default function ContactUs() {
   const form = useRef();
   const [formSent, setFormSent] = useState(false);
   const { language } = useStore();
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(isLoading);
 
   useEffect(() => {
     emailjs.init(process.env.REACT_APP_EMAILJS_KEY);
@@ -16,6 +20,7 @@ export default function ContactUs() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const formData = new FormData(form.current);
     const emailParams = {
@@ -36,6 +41,7 @@ export default function ContactUs() {
           console.log('SUCCESS!');
           setFormSent(true);
           form.current.reset();
+          setIsLoading(false);
 
           setTimeout(() => {
             setFormSent(false);
@@ -52,6 +58,7 @@ export default function ContactUs() {
     <>
       {!formSent && (
         <div className="contact-form">
+          <img src={img} alt="" />
           <form ref={form} onSubmit={sendEmail}>
             <label>{language === 'IT' ? 'Nome' : 'Name'}</label>
             <input type="text" name="user_name" required />
@@ -59,7 +66,9 @@ export default function ContactUs() {
             <input type="email" name="user_email" required />
             <label>{language === 'IT' ? 'Messaggio' : 'Message'}</label>
             <textarea name="message" required />
-            <button type="submit">{language === 'IT' ? 'Invia' : 'Send'}</button>
+            <button type="submit" disabled={isLoading}>
+              {isLoading ? <FontAwesomeIcon className='spinner' icon={faSpinner} spin /> : language === 'IT' ? 'Invia' : 'Send'}
+            </button>
           </form>
         </div>
       )}

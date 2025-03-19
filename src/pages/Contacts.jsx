@@ -15,10 +15,13 @@ import {
   faLocationDot,
   faLanguage,
   faInfoCircle,
+  faEye,
+  faFilePdf,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { useStore } from '../store';
 import Tooltip from '@mui/material/Tooltip';
+import cv from '../cv/Resume.pdf';
 
 export default function Contacts() {
   const [activeTab, setActiveTab] = useState('info');
@@ -44,6 +47,10 @@ export default function Contacts() {
     }
   };
 
+  const handleViewCV = () => {
+    window.open(cv, '_blank');
+  };
+
   const { language } = useStore();
 
   const renderTabContent = () => {
@@ -54,10 +61,18 @@ export default function Contacts() {
             <div className="aboutDescription info">
               <div className="info-to-copy">
                 <p>
-                  <span><FontAwesomeIcon icon={faEnvelope} /></span>
+                  <span>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
                   {email}
                 </p>
-                <Tooltip title={emailCopied ? 'Copied' : 'Copy'} placement="top" arrow>
+                <Tooltip
+                  title={
+                    emailCopied ? (language === 'IT' ? 'Copiato' : 'Copied') : language === 'IT' ? 'Copia' : 'Copy'
+                  }
+                  placement="top"
+                  arrow
+                >
                   <FontAwesomeIcon
                     className="icon"
                     icon={emailCopied ? faCheck : faCopy}
@@ -67,10 +82,18 @@ export default function Contacts() {
               </div>
               <div className="info-to-copy">
                 <p>
-                  <span><FontAwesomeIcon icon={faPhone} /></span>
+                  <span>
+                    <FontAwesomeIcon icon={faPhone} />
+                  </span>
                   {phone}
                 </p>
-                <Tooltip title={phoneCopied ? 'Copied' : 'Copy'} placement="top" arrow>
+                <Tooltip
+                  title={
+                    phoneCopied ? (language === 'IT' ? 'Copiato' : 'Copied') : language === 'IT' ? 'Copia' : 'Copy'
+                  }
+                  placement="top"
+                  arrow
+                >
                   <FontAwesomeIcon
                     className="icon"
                     icon={phoneCopied ? faCheck : faCopy}
@@ -94,7 +117,22 @@ export default function Contacts() {
                   {language === 'IT' ? 'Italiano, Inglese B2' : 'Italian, English B2'}
                 </p>
               </div>
+              <div className="info-to-copy">
+                <p>
+                  <span>
+                    <FontAwesomeIcon icon={faFilePdf} />
+                  </span>
+                  {language === 'IT' ? 'Guarda il mio Curriculum' : 'Check My Resume'}
+                </p>
+
+                <Tooltip title={language === 'IT' ? 'Visualizza' : 'View'} placement="top" arrow>
+                  <FontAwesomeIcon className="icon" icon={faEye} onClick={() => handleViewCV()} />
+                </Tooltip>
+              </div>
             </div>
+
+            {/* badge */}
+
             <div className="badge">
               <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                 <button className="github-badge">

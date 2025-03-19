@@ -10,7 +10,8 @@
   --mainAbout: #6200ea;
   --form: rgb(22, 33, 41);
   --titles: #ffd700;
-  --cursor : url('../../images/whiteCursor.svg'), auto;
+  --cursor: url('../../images/whiteCursor.svg'), auto;
+  --border: 1px solid #e0e0e0;
 }
 
 [data-theme='light'] {
@@ -24,10 +25,12 @@
   --mainAbout: #333;
   --form: #e6954e;
   --titles: #e0e0e0;
-  --cursor : url('../../images/blackCursor.svg'), auto;
+  --cursor: url('../../images/blackCursor.svg'), auto;
+  --border: 1px solid #333;
 }
 
-.mainWork, .projects{
+.mainWork,
+.projects {
   cursor: var(--cursor);
 }
 
@@ -58,33 +61,42 @@ html {
   p {
     color: var(--text-color);
   }
-  h2{
+  h2 {
     color: var(--titles);
   }
 }
 
-.project-card{
+.project-card {
   background-color: var(--aboutDescription);
-  h3{
+  h3 {
     color: var(--titles);
   }
 }
 
-.contact-form{
+.contact-form {
   background-color: var(--form);
-  h2{
+  h2 {
     color: var(--titles);
   }
-  label{
+  label {
     color: var(--text-color);
   }
-  button[type="submit"]{
-    background-color: var(--secondary-color);
+  button[type='submit'] {
+    background-color: var(--form);
+    border: var(--border);
     color: var(--text-color);
+  }
+  form {
+    input,
+    textarea {
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      border: var(--border);
+    }
   }
 }
 
-.success-message{
+.success-message {
   color: var(--text-color);
 }
 
@@ -93,21 +105,20 @@ html {
 }
 
 .info-to-copy {
-  span{
-    color : var(--text-color);
+  span {
+    color: var(--text-color);
   }
-  .icon{
-    color : var(--text-color);
+  .icon {
+    color: var(--text-color);
   }
 }
 @media only screen and (min-width: 1024px) {
   .mainLaptop {
     background-color: var(--bg-color);
-    box-shadow: 105px 0 5px 2px var(--shadow);
+    box-shadow: 0px 0 5px 2px var(--shadow);
   }
   .tabs-container {
     background-color: var(--bg-color);
-    box-shadow: 0 0 5px 2px var(--shadow);
   }
   .custom-date {
     color: var(--date);

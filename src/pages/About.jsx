@@ -4,7 +4,7 @@ import NavbarTop from '../components/Navbar-Top';
 import Title from '../components/Title';
 import '../style/pages/About.scss';
 import Tabs from '../components/Tabs';
-import me from '../images/copia.jpg';
+import me from '../images/copia1.png';
 import coding from '../images/coding.png';
 import search from '../images/search.png';
 import climb from '../images/climb.png';
@@ -37,33 +37,42 @@ export default function AboutMe() {
       case 'why':
         return (
           <>
-            <div className="aboutDescription profile">
-              <img src={coding} alt="" />
-              <div>
-                <h2>{language === 'IT' ? 'Perchè Web Developer?' : 'Why Web Developer?'}</h2>
-                <p>{aboutTexts.whyText[language]}</p>
-              </div>
-            </div>
+            {coding && search && (
+              <>
+                <div className='both'>
+                  <div className="aboutDescription profile">
+                    <img src={coding} alt="" />
+                    <div>
+                      <h2>{language === 'IT' ? 'Perchè Web Developer?' : 'Why Web Developer?'}</h2>
+                      <p>{aboutTexts.whyText[language]}</p>
+                    </div>
+                  </div>
 
-            <div className="aboutDescription profile">
-              <div>
-                <h2>{language === 'IT' ? 'Cosa sto cercando?' : 'What am I looking for?'}</h2>
-                <p>{aboutTexts.purposeText[language]}</p>
-              </div>
-              <img src={search} alt="" />
-            </div>
+                  <div className="aboutDescription profile">
+                  <img src={search} alt="" />
+
+                    <div>
+                      <h2>{language === 'IT' ? 'Cosa sto cercando?' : 'What am I looking for?'}</h2>
+                      <p>{aboutTexts.purposeText[language]}</p>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </>
         );
       case 'passions':
         return (
           <>
-            <div className="aboutDescription profile">
-              <img src={climb} alt=""></img>
-              <div>
-                <h2>{language === 'IT' ? 'Cosa mi appassiona?' : 'What do I love?'}</h2>
-                <p>{aboutTexts.passionText[language]}</p>
+            {climb && (
+              <div className="aboutDescription profile">
+                <img src={climb} alt=""></img>
+                <div>
+                  <h2>{language === 'IT' ? 'Cosa mi appassiona?' : 'What do I love?'}</h2>
+                  <p>{aboutTexts.passionText[language]}</p>
+                </div>
               </div>
-            </div>
+            )}
           </>
         );
       default:
