@@ -8,7 +8,7 @@ $input-focus-border-color: $primary-color;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   margin: 0 auto;
   padding: 20px;
@@ -28,6 +28,7 @@ $input-focus-border-color: $primary-color;
     justify-content: center;
     width: 100%;
     font-size: 15px;
+    gap: 5px;
   }
 
   textarea,

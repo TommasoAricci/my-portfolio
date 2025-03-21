@@ -38,7 +38,7 @@ export default function Project({ src, title, link, git, text, position }) {
     <Tooltip title={text} {...tooltipProps}>
       {src && (
         <div className="project-card">
-          <img src={src} alt={title} className="project-image" />
+          <img src={src} alt={title} className="project-image" loading="eager" />
           <h3 className="project-title">{title}</h3>
           <div className="project-buttons">
             <a href={link} target="_blank" rel="noopener noreferrer">

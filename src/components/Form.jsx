@@ -4,7 +4,7 @@ import '../style/Form.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useStore } from '../store';
-import img from '../images/sending.jpg';
+import img from '../images/compressed/sending.webp';
 
 export default function ContactUs() {
   const form = useRef();

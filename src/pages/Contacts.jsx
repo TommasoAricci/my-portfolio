@@ -22,6 +22,7 @@ import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-i
 import { useStore } from '../store';
 import Tooltip from '@mui/material/Tooltip';
 import cv from '../cv/Resume.pdf';
+import cvEng from '../cv/ResumeEng.pdf';
 
 export default function Contacts() {
   const [activeTab, setActiveTab] = useState('info');
@@ -48,7 +49,7 @@ export default function Contacts() {
   };
 
   const handleViewCV = () => {
-    window.open(cv, '_blank');
+    window.open(language === 'IT' ? cv : cvEng, '_blank');
   };
 
   const { language } = useStore();

@@ -4,10 +4,10 @@ import NavbarTop from '../components/Navbar-Top';
 import Title from '../components/Title';
 import '../style/pages/About.scss';
 import Tabs from '../components/Tabs';
-import me from '../images/copia1.png';
-import coding from '../images/coding.png';
-import search from '../images/search.png';
-import climb from '../images/climb.png';
+import me from '../images/compressed/copia1.webp';
+import coding from '../images/compressed/coding.webp';
+import search from '../images/compressed/search.webp';
+import climb from '../images/compressed/climb.webp';
 import { useStore } from '../store';
 import { aboutTexts } from '../texts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -26,7 +26,7 @@ export default function AboutMe() {
         return (
           <>
             <div className="aboutDescription profile">
-              <img src={me} style={{ borderRadius: '50%' }} alt="" />
+              <img src={me} style={{ borderRadius: '50%' }} loading="eager" alt="" />
               <div>
                 <h2>{language === 'IT' ? 'Chi è Tommaso?' : 'Who is Tommaso?'}</h2>
                 <p>{aboutTexts.aboutText[language]}</p>
@@ -39,9 +39,9 @@ export default function AboutMe() {
           <>
             {coding && search && (
               <>
-                <div className='both'>
+                <div className="both">
                   <div className="aboutDescription profile">
-                    <img src={coding} alt="" />
+                    <img src={coding} alt="" loading="eager" />
                     <div>
                       <h2>{language === 'IT' ? 'Perchè Web Developer?' : 'Why Web Developer?'}</h2>
                       <p>{aboutTexts.whyText[language]}</p>
@@ -49,8 +49,7 @@ export default function AboutMe() {
                   </div>
 
                   <div className="aboutDescription profile">
-                  <img src={search} alt="" />
-
+                    <img src={search} alt="" loading="eager" />
                     <div>
                       <h2>{language === 'IT' ? 'Cosa sto cercando?' : 'What am I looking for?'}</h2>
                       <p>{aboutTexts.purposeText[language]}</p>
@@ -66,7 +65,7 @@ export default function AboutMe() {
           <>
             {climb && (
               <div className="aboutDescription profile">
-                <img src={climb} alt=""></img>
+                <img src={climb} alt="" loading="eager" />
                 <div>
                   <h2>{language === 'IT' ? 'Cosa mi appassiona?' : 'What do I love?'}</h2>
                   <p>{aboutTexts.passionText[language]}</p>
